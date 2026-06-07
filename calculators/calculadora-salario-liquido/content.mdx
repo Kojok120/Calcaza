@@ -1,0 +1,42 @@
+## O que esta calculadora faz
+
+Esta calculadora mostra quanto do seu salário bruto realmente chega à conta no fim do mês. A partir do valor combinado em contrato, ela aplica os dois descontos obrigatórios da folha de pagamento de quem trabalha com carteira assinada (CLT) em 2026: a contribuição ao **INSS** e o **Imposto de Renda Retido na Fonte (IRRF)**. Se você tiver outros descontos fixos — como plano de saúde, vale-transporte ou adiantamentos —, basta informá-los para chegar ao salário líquido aproximado.
+
+O resultado é uma **estimativa** do salário mensal. Ele não inclui 13º salário, férias, horas extras nem benefícios variáveis, que seguem regras próprias.
+
+## A fórmula e de onde vêm as tabelas
+
+O cálculo segue três conjuntos de regras oficiais, todos da legislação brasileira de 2026:
+
+1. **Tabela do INSS (contribuição do empregado).** O desconto é progressivo: cada alíquota incide apenas sobre a parcela do salário que cai dentro da faixa. Em 2026, as faixas vão de 7,5% a 14%, e a contribuição é limitada ao teto do salário de contribuição (R$ 8.475,55), o que resulta em um desconto máximo de R$ 988,09. As faixas e o teto são definidos pela Portaria Interministerial anual e publicados pelo [INSS / Previdência Social](https://www.gov.br/inss).
+
+2. **Tabela do IRRF mensal.** Sobre a base de cálculo, aplica-se a alíquota da faixa correspondente e subtrai-se a parcela a deduzir. A base pode ser apurada de duas formas: pelas **deduções legais** (INSS pago mais R$ 189,59 por dependente) ou pelo **desconto simplificado** de R$ 607,20. A calculadora apura o imposto pelos dois caminhos e usa o menor, que é o mais benéfico para você. A tabela vigente está publicada pela [Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026).
+
+3. **Isenção e redutor de 2026.** Pela [Lei nº 15.270/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm), quem recebe até R$ 5.000 por mês fica isento do IRRF na folha. Entre R$ 5.000 e R$ 7.350, aplica-se um redutor que diminui o imposto de forma decrescente (redutor = 978,62 − 0,133145 × salário bruto). Acima de R$ 7.350, vale a tabela normal, sem redutor.
+
+A fórmula final é simples: **salário líquido = salário bruto − INSS − IRRF − outros descontos**.
+
+## Como preencher os campos
+
+- **Salário bruto mensal:** o valor cheio do seu contrato, antes de qualquer desconto. É a base de todo o cálculo.
+- **Número de dependentes:** quantos dependentes você declara para fins de Imposto de Renda. Cada um reduz a base do IR em R$ 189,59 por mês. Se você não tem dependentes ou usa o desconto simplificado, pode deixar em 0 — a calculadora escolhe automaticamente a base mais vantajosa.
+- **Outros descontos (opcional):** somas fixas que saem da folha, como mensalidade de plano de saúde ou vale. Esse campo entra direto na subtração do líquido.
+
+## Exemplos práticos
+
+**1. Salário de R$ 4.500, sem dependentes (isento de IR).** O INSS é descontado normalmente, mas, como o bruto está abaixo de R$ 5.000, o IRRF é zero em 2026. O líquido fica próximo do bruto menos a contribuição previdenciária.
+
+**2. Salário de R$ 6.000 com 1 dependente.** O bruto está na faixa do redutor. Depois de descontar o INSS e considerar o dependente, o imposto pela tabela seria de cerca de R$ 512,72; o redutor de aproximadamente R$ 179,75 reduz o IRRF para perto de R$ 332,97. O líquido fica em torno de R$ 5.025,52.
+
+**3. Salário acima do teto do INSS (R$ 10.000).** Aqui o INSS trava no desconto máximo de R$ 988,09, independentemente de quanto passe do teto. Como o bruto supera R$ 7.350, não há redutor, e o IRRF segue a tabela cheia.
+
+## Erros comuns
+
+- **Confundir salário bruto com líquido.** O valor do contrato é o bruto; o que cai na conta é o líquido, já com INSS e IRRF descontados.
+- **Misturar o INSS do empregado com o patronal.** Esta calculadora trata só da contribuição **descontada do trabalhador**. A parte paga pela empresa (contribuição patronal) é outra e não reduz o seu líquido.
+- **Achar que “ninguém paga IR em 2026”.** A isenção vale até R$ 5.000 de bruto. Acima disso, o imposto volta de forma gradual (redutor) e, passando de R$ 7.350, incide pela tabela normal.
+- **Esperar que o cálculo cubra 13º e férias.** Esses valores têm apuração separada e não estão incluídos aqui.
+
+## Calculadoras relacionadas
+
+A Calcaza está montando uma série de calculadoras trabalhistas e tributárias para o Brasil — INSS, IRRF, FGTS, rescisão e 13º salário — sempre com a fonte oficial citada. Enquanto elas chegam, você pode acompanhar os guias no [blog](/blog) e conhecer como verificamos cada número na página [Sobre](/about).

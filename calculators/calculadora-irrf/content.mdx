@@ -1,0 +1,65 @@
+## O que esta calculadora faz
+
+Esta calculadora mostra **apenas o Imposto de Renda Retido na Fonte (IRRF)** do seu rendimento mensal. Diferente de uma calculadora de salário líquido, que junta todos os descontos da folha, aqui o foco é só o imposto que a fonte pagadora retém e recolhe para a Receita Federal. Você vê o número do IRRF em destaque e, ao lado, todo o detalhamento: a base de cálculo usada, a faixa da tabela, a parcela a deduzir, a comparação entre o modo completo e o simplificado, o redutor de 2026 e a alíquota efetiva.
+
+O resultado é uma **estimativa** do imposto retido no mês. Ele não inclui o 13º salário, as férias nem o acerto que acontece na declaração anual do Imposto de Renda.
+
+## Como a base de cálculo é montada
+
+O IRRF não incide sobre o rendimento bruto cheio, e sim sobre uma **base de cálculo**. Essa base pode ser apurada de duas formas, e a calculadora escolhe automaticamente a que gera menos imposto para você:
+
+- **Modo completo (deduções legais):** rendimento bruto − INSS − R$ 189,59 por dependente − outras deduções (como pensão alimentícia judicial ou previdência oficial além do INSS).
+- **Modo simplificado:** rendimento bruto − R$ 607,20 (um desconto único que substitui as deduções acima).
+
+Em geral, quem tem muitos dependentes ou paga pensão se beneficia do modo completo; quem não tem deduções costuma pagar menos pelo simplificado. A folha de pagamento faz exatamente essa comparação, e a calculadora replica o critério: apura o imposto pelos dois caminhos e usa o menor.
+
+## A tabela do IRRF de 2026
+
+Sobre a base de cálculo aplica-se a alíquota da faixa e subtrai-se a parcela a deduzir. Em 2026, a tabela mensal da [Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026) é:
+
+- até R$ 2.428,80: isento;
+- de R$ 2.428,81 a R$ 2.826,65: 7,5% (deduzir R$ 182,16);
+- de R$ 2.826,66 a R$ 3.751,05: 15% (deduzir R$ 394,16);
+- de R$ 3.751,06 a R$ 4.664,68: 22,5% (deduzir R$ 675,49);
+- acima de R$ 4.664,68: 27,5% (deduzir R$ 908,73).
+
+A fórmula da faixa é simples: **imposto = base × alíquota − parcela a deduzir**, sempre limitado a zero.
+
+## A isenção de 2026 e o redutor
+
+A novidade de 2026 vem da [Lei nº 15.270/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm). Quem recebe rendimento bruto de até R$ 5.000 por mês fica com o **IRRF zerado**, mesmo que a tabela apontasse algum imposto. Entre R$ 5.000 e R$ 7.350, entra um **redutor** que diminui o imposto de forma decrescente:
+
+> redutor = 978,62 − 0,133145 × rendimento bruto
+
+O IRRF final fica em **imposto da tabela − redutor** (nunca abaixo de zero). Acima de R$ 7.350, o redutor desaparece e vale a tabela cheia.
+
+## De onde vêm os números
+
+Todos os valores seguem fontes oficiais brasileiras de 2026: a [tabela do IRRF da Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026), a tabela progressiva do [INSS / Previdência Social](https://www.gov.br/inss) (usada para estimar a contribuição quando você não a informa) e a [Lei nº 15.270/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm), que criou a isenção até R$ 5.000 e o redutor.
+
+## Como preencher
+
+- **Rendimento bruto mensal:** o valor cheio antes dos descontos.
+- **Dependentes:** quantos você declara para fins de IR. Cada um reduz a base em R$ 189,59.
+- **Outras deduções (opcional):** pensão alimentícia judicial, previdência oficial além do INSS e deduções legais semelhantes.
+- **INSS do contracheque (opcional):** se você já tem o valor descontado no holerite, informe-o. Em branco, a calculadora estima o INSS pela tabela de 2026.
+
+## Exemplos práticos
+
+**1. Rendimento de R$ 4.000, sem dependentes.** A base mais vantajosa é a simplificada (R$ 3.392,80). Mesmo havendo imposto na tabela, como o bruto é menor que R$ 5.000, a isenção de 2026 zera o IRRF.
+
+**2. Rendimento de R$ 6.000 com 1 dependente.** A base completa fica em torno de R$ 5.168,90; o imposto pela tabela seria de cerca de R$ 512,72, e o redutor de aproximadamente R$ 179,75 reduz o IRRF para perto de **R$ 332,97**.
+
+**3. Rendimento de R$ 10.000 com 2 dependentes.** Acima de R$ 7.350 não há redutor: o IRRF segue a tabela cheia e fica em torno de **R$ 1.465,27**, com alíquota efetiva próxima de 14,65%.
+
+## Erros comuns
+
+- **Confundir alíquota nominal com efetiva.** A faixa pode ser de 27,5%, mas, por causa da parcela a deduzir e das deduções da base, o IRRF efetivo sobre o bruto costuma ser bem menor.
+- **Não comparar completo e simplificado.** Escolher o modo errado faz pagar imposto a mais. A calculadora já mostra o caminho mais vantajoso.
+- **Achar que a isenção do IR zera o INSS.** São descontos separados: o INSS continua sendo retido normalmente mesmo quando o IRRF fica em zero.
+
+Para ver o efeito de todos os descontos juntos no que cai na conta, vale combinar este resultado com uma calculadora de salário líquido.
+
+## Aviso
+
+Esta é uma estimativa educativa baseada nas tabelas oficiais de 2026 e pode não refletir situações específicas (rendimentos acumulados, RRA, deduções particulares). Para decisões e para a declaração anual, confirme os valores com a Receita Federal ou com um contador.
