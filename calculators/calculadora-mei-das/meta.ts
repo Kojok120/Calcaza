@@ -43,5 +43,5 @@ export const meta: CalculatorMeta = {
       a: 'Não. O DAS é um valor fixo mensal e não depende de quanto você fatura no mês. O faturamento entra em outra regra: o MEI tem um limite anual de receita. Acima desse limite, pode ser necessário migrar para outra categoria, mas o DAS em si continua sendo um valor fixo enquanto você for MEI.',
     },
   ],
-  affiliates: [],
+  affiliates: ['contabilizei'],
 };

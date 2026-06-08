@@ -19,8 +19,17 @@
 - [x] calculadora-inss — INSS 2026（empregado/autônomo/facultativo/MEI）
 - [x] calculadora-irrf — IRRF 2026（base completo x simplificado + redutor）
 - [x] calculadora-mei-das — DAS MEI 2026（comércio/serviço/ambos + caminhoneiro）
+- [x] calculadora-simples-nacional — Simples Nacional 2026（Anexo I/II/III/V, alíquota efetiva, LC 123/2006）
+- [x] calculadora-juros-compostos — Juros Compostos（aporte inicial + mensal）
+- [x] calculadora-financiamento-imovel — Financiamento Imobiliário（SAC x Price）
+- [x] calculadora-vale-transporte — Vale-Transporte（desconto 6%, Lei 7.418/1985）
+- [x] calculadora-adicional-noturno — Adicional Noturno（20% + hora reduzida 52'30", CLT art. 73）
+- [x] calculadora-conversor-clt-pj — CLT x PJ（pacote total CLT vs faturamento PJ）
+- [x] calculadora-reajuste-aluguel — Reajuste de Aluguel（IGP-M/IPCA/INPC, Lei 8.245/1991）
+- [x] calculadora-rendimento-investimentos — Rendimentos CDB/Poupança（IR regressivo Lei 11.033/2004）
+- [x] calculadora-margem-de-lucro — Margem de Lucro（markup x margem）
 
-**実装済み合計: 11本 / 目標 30本**（2026-06-08 にバッチ10本追加。全て gov.br 一次ソース・pt-BR・194 tests / build 37ページ OK・日付分散済）
+**実装済み合計: 20本 / 目標 30本**（2026-06-08: 労務10 + 税4 + 金融5 + seed1。全て gov.br/法定一次ソースか純粋計算・pt-BR・276 tests / build 20計算機 OK・日付分散済。calcaza.com 本番ライブ）
 
 ## Tier 1 候補（SERP 実走前の種リスト — kw-researcher が再評価）
 

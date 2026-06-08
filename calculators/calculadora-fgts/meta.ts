@@ -43,5 +43,5 @@ export const meta: CalculatorMeta = {
       a: 'Não. O FGTS é obrigatório para o trabalhador com carteira assinada (CLT). Autônomos, contribuintes individuais e MEI não têm FGTS por padrão. A calculadora foi feita para o vínculo CLT.',
     },
   ],
-  affiliates: [],
+  affiliates: ['financiamentoImovel', 'corretora'],
 };

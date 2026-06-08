@@ -43,5 +43,5 @@ export const meta: CalculatorMeta = {
       a: 'No IRRF mensal você pode usar as deduções legais (INSS e dependentes) ou o desconto simplificado de R$ 607,20. A calculadora apura o imposto pelos dois caminhos e mostra o menor, que é o mais benéfico para você, como a própria folha de pagamento costuma fazer.',
     },
   ],
-  affiliates: [],
+  affiliates: ['contaDigital', 'cursoFinancas'],
 };

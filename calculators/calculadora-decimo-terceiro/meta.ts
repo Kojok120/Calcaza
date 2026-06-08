@@ -44,5 +44,5 @@ export const meta: CalculatorMeta = {
       a: 'Sim, quando são habituais. A média das horas extras, do adicional noturno, de periculosidade ou insalubridade e de comissões integra a base do 13º. No campo de médias de adicionais você informa esse valor mensal médio em reais para incluí-lo no cálculo.',
     },
   ],
-  affiliates: [],
+  affiliates: ['corretora', 'contaDigital'],
 };

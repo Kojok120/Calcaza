@@ -1,0 +1,67 @@
+## O que esta calculadora faz
+
+Esta calculadora simula o **financiamento de um imóvel** pelos dois sistemas de amortização mais usados no Brasil: o **SAC** e a **Tabela Price**. A partir do valor do imóvel, da entrada, da taxa de juros anual e do prazo em meses, ela mostra a **parcela inicial**, a **parcela final**, o **total pago** ao longo do contrato e o **total de juros**.
+
+O objetivo é ajudar você a comparar cenários antes de procurar o banco: quanto pesa a entrada, como o prazo muda a parcela e por que o SAC e a Price chegam a valores tão diferentes de juros. O resultado é uma **estimativa** que considera apenas amortização e juros — mais adiante explicamos o que fica de fora.
+
+## SAC x Price: qual é a diferença
+
+A grande diferença entre os dois sistemas está em como a parcela se comporta ao longo do tempo.
+
+No **SAC (Sistema de Amortização Constante)**, você amortiza sempre o **mesmo valor de principal** todos os meses. Os juros incidem sobre o saldo devedor, que cai a cada parcela paga. Como o saldo diminui, os juros também diminuem — e a **parcela é decrescente**: começa mais alta e termina mais baixa. É o sistema predominante no crédito imobiliário da casa própria.
+
+Na **Tabela Price** (sistema francês), a **parcela é fixa** do primeiro ao último mês. No começo, a maior parte da parcela é juro e você amortiza pouco; com o tempo, a proporção se inverte. A vantagem é a previsibilidade da parcela; a desvantagem é pagar mais juros no total para o mesmo prazo e a mesma taxa.
+
+## Por que o SAC paga menos juros no total
+
+A explicação é direta: no SAC, o saldo devedor cai mais rápido, porque você amortiza um valor fixo e relativamente alto desde o primeiro mês. Como os juros são sempre calculados sobre o saldo que falta, um saldo que encolhe depressa gera **menos juros acumulados** até o fim do contrato.
+
+Na Price, as primeiras parcelas amortizam pouco principal (quase tudo é juro), então o saldo cai devagar no início — e juros sobre um saldo alto por mais tempo significam **mais juros no total**. O preço que você paga pela parcela inicial menor da Price é um custo financeiro maior ao longo dos anos.
+
+## A taxa de juros: de % ao ano para % ao mês
+
+O banco costuma divulgar a taxa em **porcentagem ao ano (a.a.)**, mas as parcelas são mensais. Esta calculadora converte a taxa anual em **taxa mensal equivalente composta**, pela fórmula:
+
+> i mensal = (1 + taxa anual)^(1/12) − 1
+
+Assim, capitalizar 12 meses dessa taxa mensal reproduz exatamente a taxa anual informada. Vale um aviso: **alguns contratos usam a taxa nominal** (taxa anual dividida por 12), o que gera um valor um pouco diferente. Por isso pode haver pequena divergência entre a simulação e a proposta do seu banco.
+
+Além disso, a parcela real envolve mais do que juros e amortização. O contrato inclui o **CET (Custo Efetivo Total)**, que reúne todos os encargos, os **seguros obrigatórios** — o **MIP** (Morte e Invalidez Permanente) e o **DFI** (Danos Físicos ao Imóvel) — e a **taxa de administração** mensal. Esta calculadora **não** soma esses custos, então a parcela do banco tende a ser maior do que a estimada aqui.
+
+## Como preencher os campos
+
+- **Valor do imóvel:** o preço total negociado do imóvel.
+- **Entrada:** quanto você paga à vista. A entrada mínima costuma ser cerca de 20% do valor. Quanto maior, menos juros você paga no total.
+- **Taxa de juros (% a.a.):** a taxa anual informada pelo banco. É convertida em taxa mensal equivalente.
+- **Prazo (meses):** o número de parcelas. Por exemplo, 360 meses equivalem a 30 anos.
+- **Sistema de amortização:** escolha **SAC** (parcela decrescente) ou **Price** (parcela fixa) para comparar.
+
+## Exemplos práticos
+
+**1. Imóvel de R$ 300.000 com R$ 60.000 de entrada, 10% a.a. em 360 meses (SAC).** O valor financiado é de R$ 240.000. A primeira parcela fica em torno de R$ 2.580,46 e a última cai para cerca de R$ 671,98. No total, paga-se aproximadamente R$ 585.439,76, sendo cerca de R$ 345.439,76 só de juros.
+
+**2. O mesmo imóvel pela Tabela Price (10% a.a., 360 meses).** A parcela fica fixa em torno de R$ 2.030,14 do começo ao fim. O total pago sobe para cerca de R$ 730.849,67, com aproximadamente R$ 490.849,67 de juros — bem mais que no SAC, mesmo com a parcela inicial menor.
+
+**3. Aumentar a entrada reduz tudo.** Se a entrada subir de R$ 60.000 para R$ 100.000 no mesmo imóvel (financiando R$ 200.000 a 10% a.a. em 360 meses pelo SAC), a primeira parcela cai para cerca de R$ 2.150,38, a última para R$ 559,99, e o total de juros recua para perto de R$ 287.866,47. Quanto mais entrada, menos juros.
+
+## Erros comuns
+
+- **Achar que a parcela da simulação é a do banco.** Ela não inclui CET, seguros (MIP e DFI) nem taxa de administração. A parcela real costuma ser maior.
+- **Comparar SAC e Price só pela primeira parcela.** A Price começa mais barata, mas custa mais juros no total. Olhe sempre o total pago.
+- **Esquecer da entrada mínima.** Em geral, os bancos pedem cerca de 20% de entrada. Sem ela, o financiamento pode não ser aprovado.
+- **Supor que todo banco usa a mesma conta.** A taxa pode ser nominal ou efetiva, e cada instituição tem suas regras. Use esta calculadora como referência e confirme na simulação oficial.
+
+## De onde vêm as regras
+
+As condições do crédito imobiliário no Brasil seguem as normas do sistema financeiro e as informações oficiais das instituições:
+
+- **Educação financeira e financiamento imobiliário:** [Banco Central do Brasil](https://www.bcb.gov.br/cidadaniafinanceira) — referência sobre juros, CET e crédito.
+- **Habitação e financiamento da casa própria:** [Caixa Econômica Federal](https://www.caixa.gov.br/voce/habitacao) — principal agente do financiamento habitacional, com regras de entrada, prazo, sistemas SAC/Price e uso do FGTS.
+
+## Calculadoras relacionadas
+
+- [Calculadora de FGTS](/c/calculadora-fgts) — projete o saldo que pode ajudar na entrada do imóvel.
+- [Calculadora de Salário Líquido](/c/calculadora-salario-liquido) — veja quanto sobra na conta para a parcela.
+- [Calculadora de INSS](/c/calculadora-inss) e [Calculadora de IRRF](/c/calculadora-irrf) — entenda os descontos que afetam a renda comprometida.
+
+Esta página tem caráter informativo e apresenta uma **estimativa**. Os valores reais dependem da taxa, do CET, dos seguros e das condições do banco. Para fechar negócio, use a simulação oficial da instituição e, se possível, fale com um especialista.

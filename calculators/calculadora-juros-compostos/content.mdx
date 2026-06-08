@@ -1,0 +1,76 @@
+## O que esta calculadora faz
+
+Esta calculadora mostra como o seu dinheiro cresce sob **juros compostos** — o famoso "juros sobre juros". A partir de um **valor inicial**, de um **aporte mensal**, de uma **taxa de juros** (mensal ou anual) e de um **prazo** (em meses ou anos), ela calcula três números:
+
+- o **montante final**, ou seja, quanto você terá ao fim do período;
+- o **total investido**, que é a soma do valor inicial com todos os aportes;
+- o **total em juros**, que é tudo o que o dinheiro rendeu além do que você colocou.
+
+É uma simulação matemática útil para planejar metas, comparar cenários de poupança e entender o impacto do tempo e dos aportes. Trata-se de um cálculo nominal e bruto: não entra Imposto de Renda, IOF, taxa de administração nem inflação.
+
+## A fórmula dos juros compostos
+
+Nos juros compostos, o rendimento de cada período passa a fazer parte da base de cálculo do período seguinte. A fórmula do montante, já considerando aportes mensais, é:
+
+**M = C × (1 + i)ⁿ + A × [ ((1 + i)ⁿ − 1) ÷ i ]**
+
+Onde:
+
+- **M** é o montante final;
+- **C** é o capital inicial (o valor inicial);
+- **A** é o aporte feito a cada mês;
+- **i** é a taxa de juros por período, em decimal (1% = 0,01);
+- **n** é o número de períodos (aqui, sempre convertido para meses).
+
+A primeira parte, C × (1 + i)ⁿ, cuida do valor inicial. A segunda parte, com o termo dos aportes, soma o crescimento de cada depósito mensal. Quando a taxa é zero, a fórmula vira simplesmente M = C + A × n, porque sem juros o dinheiro só se acumula.
+
+## Juros simples x juros compostos
+
+A diferença entre os dois é a base sobre a qual os juros incidem:
+
+- Nos **juros simples**, o rendimento incide sempre sobre o valor inicial. O crescimento é **linear** — uma reta.
+- Nos **juros compostos**, o rendimento incide sobre o saldo acumulado, incluindo os juros anteriores. O crescimento é **exponencial** — uma curva que sobe cada vez mais rápido.
+
+Em prazos curtos, a diferença é pequena. Em prazos longos, ela se torna enorme. Um capital aplicado por 30 anos a juros compostos chega a um valor muito superior ao mesmo capital sob juros simples, mesmo com a mesma taxa.
+
+## Taxa mensal x taxa anual (e como converter)
+
+Um erro comum é dividir a taxa anual por 12 para achar a mensal. Em juros compostos isso não funciona. A conversão correta é:
+
+**i_mensal = (1 + taxa_anual)^(1/12) − 1**
+
+Por exemplo, **12,6825% ao ano equivalem a 1% ao mês** — e não 12% ÷ 12 = 1% por coincidência apenas nesse caso específico de arredondamento; na maioria dos casos os números divergem. Por isso, ao escolher "Anual" no campo de período da taxa, esta calculadora faz a conversão composta automaticamente e mostra a **taxa mensal efetiva** usada no cálculo.
+
+## O poder do tempo e dos aportes
+
+Nos juros compostos, dois fatores fazem mais diferença do que costumam parecer: o **tempo** e a **regularidade dos aportes**. Quanto mais longo o prazo, mais ciclos de capitalização acontecem, e maior é a fatia do montante que vem dos juros — não do dinheiro que você depositou. Aportes mensais constantes, mesmo modestos, somados ao efeito do tempo, podem superar uma única aplicação grande feita tarde demais. Começar cedo geralmente pesa mais no resultado final do que perseguir a taxa mais alta.
+
+## Como preencher os campos
+
+- **Valor inicial:** quanto você já tem aplicado hoje. Pode ser R$ 0.
+- **Aporte mensal:** quanto pretende depositar todo mês. Pode ser R$ 0 se for só uma aplicação única.
+- **Taxa de juros:** o percentual por período. Escolha ao lado se ela é mensal (a.m.) ou anual (a.a.).
+- **Prazo:** por quanto tempo o dinheiro fica aplicado. Escolha se está em meses ou em anos.
+
+## Exemplos práticos
+
+**1. Só valor inicial.** Você aplica R$ 1.000, sem aportes, a 1% ao mês por 12 meses. O montante final fica em **R$ 1.126,83**, ou seja, R$ 126,83 de juros sobre os R$ 1.000 investidos.
+
+**2. Só aportes mensais.** Você começa do zero e deposita R$ 100 por mês, a 1% ao mês, durante 12 meses. Investiu R$ 1.200, mas o montante chega a cerca de **R$ 1.268,25**, com aproximadamente R$ 68,25 em juros.
+
+**3. Valor inicial mais aportes.** Você parte de R$ 1.000 e ainda aporta R$ 200 por mês, a 1% ao mês por 12 meses. O total investido é R$ 3.400 e o montante final fica em torno de **R$ 3.663,33**, com cerca de R$ 263,33 de juros.
+
+**4. Convertendo taxa anual.** Os mesmos R$ 1.000 do primeiro exemplo, mas com a taxa informada como 12,6825% ao ano. A calculadora converte para 1% ao mês e chega ao mesmo **R$ 1.126,83** — mostrando como a conversão composta funciona.
+
+## Erros comuns
+
+- **Misturar taxa ao mês com prazo em anos.** Se a taxa é mensal, o prazo precisa render mês a mês. Esta calculadora resolve isso convertendo tudo para a base mensal, mas, em contas manuais, é uma das maiores fontes de erro.
+- **Dividir a taxa anual por 12.** A conversão correta usa potência, não divisão simples. Dividir por 12 quase sempre subestima ou superestima o resultado.
+- **Achar que juros compostos crescem em linha reta.** O crescimento é exponencial. Dobrar o prazo costuma fazer o montante crescer muito mais do que o dobro.
+- **Confundir total investido com montante.** O montante já inclui os juros; o total investido é só o que você colocou de fato.
+
+## Calculadoras relacionadas
+
+Para ver quanto sobra do salário para investir, use a [Calculadora de Salário Líquido](/c/calculadora-salario-liquido). Se quer planejar o uso do [FGTS](/c/calculadora-fgts) ou do seu [13º salário](/c/calculadora-decimo-terceiro) em uma aplicação, comece por essas estimativas. A Calcaza cita a fonte de cada número — veja como verificamos os cálculos na página [Sobre](/about) e acompanhe os guias no [blog](/blog).
+
+> Esta é uma simulação de juros compostos de caráter informativo. Ela mostra o valor nominal bruto e não substitui orientação financeira. Rendimentos reais de uma calculadora de rendimentos ou de qualquer investimento podem variar e sofrer Imposto de Renda, IOF e taxas. Consulte um profissional antes de decidir.

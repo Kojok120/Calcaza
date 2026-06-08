@@ -1,0 +1,66 @@
+## O que esta calculadora faz
+
+Esta calculadora ajuda você a precificar um produto ou serviço a partir do **custo**. Você informa quanto paga por unidade, escolhe se quer raciocinar por **markup** ou por **margem** e, se quiser, inclui as **despesas variáveis** (impostos, comissão, taxa de cartão). Em troca, ela mostra quatro números:
+
+- o **preço de venda** sugerido;
+- o **lucro por unidade** (já descontados o custo e as despesas variáveis);
+- a **margem sobre a venda**, em porcentagem;
+- o **markup sobre o custo**, em porcentagem.
+
+É um cálculo por produto, pensado para o MEI e para o pequeno negócio. Ele não substitui um sistema de gestão nem a orientação de um contador, mas serve para você não precificar no escuro.
+
+## Markup x margem: a diferença que mais confunde
+
+Markup e margem nascem do mesmo lucro, mas usam **bases diferentes**:
+
+- **Markup** é o percentual aplicado **sobre o custo**. Você parte do que pagou e acrescenta uma porcentagem para chegar ao preço.
+- **Margem** é o percentual calculado **sobre o preço de venda**. Do valor que o cliente paga, é a fatia que sobra de lucro.
+
+Quem mistura os dois costuma achar que está ganhando mais do que realmente ganha. Um markup de 50% parece igual a uma margem de 50%, mas não é: como a base muda, o mesmo lucro em reais vira um percentual de markup maior e um percentual de margem menor.
+
+## Por que markup de 100% não é margem de 100%
+
+Pegue um produto que custa **R$ 50,00**. Com **markup de 100%**, você dobra o custo e chega a **R$ 100,00**. O lucro é R$ 50,00 — que representa **50% do preço de venda**, ou seja, **margem de 50%**.
+
+Agora repare: uma **margem de 100%** seria impossível, porque significaria que o lucro é 100% do preço e o custo é zero. É por isso que, no modo margem, a calculadora avisa quando a soma da margem com as despesas variáveis chega a 100% ou mais: a conta deixa de fazer sentido.
+
+## Incluindo as despesas variáveis
+
+Despesas variáveis são aquelas que incidem **a cada venda**: os impostos do **DAS do MEI** ou do **Simples Nacional**, a comissão do marketplace e a **taxa da maquininha de cartão**. No campo de despesas variáveis, você informa o total desses percentuais sobre a venda.
+
+No modo margem, a fórmula monta o preço para que, depois de pagar o custo **e** essas despesas, sobre exatamente a margem desejada:
+
+**preço = custo ÷ (1 − (margem + despesas) ÷ 100)**
+
+Exemplo: custo de R$ 50,00, margem de 20% e despesas de 10%. A soma é 30%, então o preço é 50 ÷ (1 − 0,30) = **R$ 71,43**. Desse valor, R$ 7,14 vão para as despesas variáveis e sobram **R$ 14,29** de lucro — uma margem real de 20% sobre a venda.
+
+## Como precificar sem ter prejuízo
+
+A maneira mais segura é pensar pela margem: defina quanto você quer que sobre de cada venda e deixe a calculadora montar o preço já descontando custo e despesas. Se você só aplica markup sobre o custo e esquece impostos e taxa de cartão, o preço parece lucrativo, mas a sobra real fica bem menor do que o percentual sugere.
+
+## Como preencher os campos
+
+- **Custo do produto:** quanto você paga por unidade (compra ou produção).
+- **Modo:** escolha **margem** (sobre a venda) ou **markup** (sobre o custo).
+- **Percentual:** o markup ou a margem desejada, conforme o modo.
+- **Despesas variáveis:** o total, em %, de impostos, comissão e taxa de cartão sobre a venda. Pode ser 0.
+
+## Exemplos práticos
+
+**1. Markup de 100%.** Custo de R$ 50,00, modo markup, 100%. O preço fica em **R$ 100,00**, com lucro de R$ 50,00 — margem real de 50% e markup de 100%.
+
+**2. Margem de 50%.** Custo de R$ 50,00, modo margem, 50%. O preço também fica em **R$ 100,00**, mas aqui você partiu da margem desejada sobre a venda, não do custo.
+
+**3. Margem com despesas.** Custo de R$ 50,00, margem de 20% e despesas variáveis de 10%. O preço sobe para **R$ 71,43** para que, após custo e despesas, sobre a margem de 20% que você pediu.
+
+## Erros comuns
+
+- **Confundir markup com margem.** São percentuais sobre bases diferentes; tratar um como o outro distorce o preço.
+- **Esquecer impostos e taxa de cartão.** Sem incluir o DAS/Simples, a comissão e a maquininha, a margem real fica menor do que a calculada.
+- **Precificar só pelo custo.** Aplicar um markup fixo sem olhar a margem que sobra é a receita para vender muito e lucrar pouco.
+
+## Calculadoras relacionadas
+
+Se você é MEI, veja quanto paga de imposto na [Calculadora do DAS MEI](/c/calculadora-mei-das) e compare regimes com a [Calculadora do Simples Nacional](/c/calculadora-simples-nacional). Para projetar o reinvestimento do lucro, use a [Calculadora de Juros Compostos](/c/calculadora-juros-compostos). A Calcaza explica a origem de cada conta na página [Sobre](/about) e nos guias do [blog](/blog).
+
+> Esta é uma ferramenta de apoio à precificação, de caráter informativo. Ela calcula a margem por produto e **não inclui custos fixos** (aluguel, salários, energia) nem faz o cálculo de ponto de equilíbrio. As alíquotas de impostos variam conforme o regime tributário. Para decisões fiscais e contábeis, consulte um contador.

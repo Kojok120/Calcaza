@@ -1,0 +1,71 @@
+## O que esta calculadora faz
+
+Esta calculadora estima quanto sua empresa paga de **DAS** no **Simples Nacional** em um determinado mês de 2026. Você escolhe o anexo da atividade, informa a **receita bruta dos últimos 12 meses (RBT12)** e o **faturamento do mês**, e ela devolve a faixa em que você se encaixa, a **alíquota efetiva** e o valor estimado do DAS.
+
+Ela serve para microempresas (ME) e empresas de pequeno porte (EPP). Se você é **MEI**, o caminho é outro: o DAS do MEI é um valor fixo mensal, e para isso existe a calculadora do DAS MEI. Aqui o cálculo é proporcional ao faturamento.
+
+## Alíquota nominal x alíquota efetiva
+
+Esse é o ponto que mais gera confusão. A **alíquota nominal** é o percentual que aparece na tabela de cada anexo. Mas não é ela que incide sobre o seu faturamento. O que vale é a **alíquota efetiva**, quase sempre menor, porque o cálculo desconta uma **parcela a deduzir**.
+
+Em outras palavras: olhar só a alíquota nominal da tabela leva a superestimar o imposto. Por isso a calculadora mostra os dois valores lado a lado, para você comparar.
+
+## A fórmula
+
+O Simples Nacional usa uma fórmula progressiva. A alíquota efetiva sai assim:
+
+> alíquota efetiva = (RBT12 × alíquota nominal − parcela a deduzir) ÷ RBT12
+
+Depois, o DAS do mês é simplesmente:
+
+> DAS do mês = faturamento do mês × alíquota efetiva
+
+Repare que a **RBT12 define a faixa** (e, com ela, a alíquota nominal e a parcela a deduzir), enquanto o **faturamento do mês** é a base sobre a qual a alíquota efetiva é aplicada. São dois números diferentes, e trocá-los é um erro comum.
+
+## Os anexos
+
+Cada atividade se enquadra em um anexo, e cada anexo tem a sua própria tabela:
+
+- **Anexo I — Comércio:** lojas, varejo e revenda de mercadorias. Alíquotas nominais de 4,00% a 19,00%.
+- **Anexo II — Indústria:** fábricas e atividades industriais. De 4,50% a 30,00%.
+- **Anexo III — Serviços:** boa parte dos serviços (instalação, manutenção, agências, escritórios). De 6,00% a 33,00%.
+- **Anexo V — Serviços de maior valor agregado:** TI, engenharia, consultoria e outros. De 15,50% a 30,50%. Alguns serviços podem ser tributados pelo Anexo III ou pelo V conforme o **fator R** (relação entre folha de pagamento e faturamento).
+
+As seis **faixas de RBT12** são as mesmas para todos os anexos: até R$ 180.000; até R$ 360.000; até R$ 720.000; até R$ 1.800.000; até R$ 3.600.000; e até R$ 4.800.000.
+
+## De onde vêm as tabelas
+
+Os valores seguem fontes oficiais e são estáveis (não mudam todo ano):
+
+- **Lei Complementar nº 123/2006** — texto e anexos do Simples Nacional, em [planalto.gov.br](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm).
+- **Portal do Simples Nacional** — Receita Federal, em [www8.receita.fazenda.gov.br/SimplesNacional](https://www8.receita.fazenda.gov.br/SimplesNacional/).
+- **Receita Federal — Simples Nacional** — em [gov.br/receitafederal](https://www.gov.br/receitafederal/pt-br).
+
+## Como preencher
+
+- **Anexo:** escolha conforme a atividade da empresa (comércio, indústria ou serviços). Em caso de dúvida sobre Anexo III ou V, confira o fator R com o seu contador.
+- **RBT12:** some o faturamento dos 12 meses anteriores. É esse total que define a faixa.
+- **Faturamento do mês:** informe a receita bruta do mês que você quer calcular.
+
+## Exemplos
+
+**1. Loja de roupas (Anexo I).** Com RBT12 de R$ 500.000 (faixa 3, nominal 9,50%, deduzir R$ 13.860), a alíquota efetiva fica em torno de **6,73%**. Sobre um faturamento de R$ 40.000 no mês, o DAS estimado é de aproximadamente **R$ 2.691,20**.
+
+**2. Agência de serviços (Anexo III).** Com RBT12 de R$ 300.000 (faixa 2, nominal 11,20%, deduzir R$ 9.360), a efetiva é de cerca de **8,08%**. Sobre R$ 25.000 faturados no mês, o DAS estimado gira em torno de **R$ 2.020,00**.
+
+**3. Empresa de TI iniciante (Anexo V).** Com RBT12 de R$ 150.000 (faixa 1, nominal 15,50%, sem parcela a deduzir), a efetiva é a própria nominal: **15,50%**. Sobre R$ 12.000 no mês, o DAS estimado é de cerca de **R$ 1.860,00**.
+
+## Erros comuns
+
+- **Confundir alíquota efetiva com nominal.** A nominal aparece na tabela, mas só a efetiva incide. Exceto na primeira faixa, a efetiva é sempre menor.
+- **Trocar RBT12 por faturamento do mês.** A RBT12 define a faixa; o faturamento do mês é a base do DAS. São números distintos.
+- **Esquecer o fator R no Anexo III/V.** Para alguns serviços, o anexo correto depende da relação entre folha e faturamento. Marcar o anexo errado muda bastante o resultado.
+- **Achar que esta calculadora vale para o MEI.** O MEI paga DAS fixo; para isso, use a calculadora do DAS MEI.
+
+## Aviso
+
+Os valores aqui são uma **estimativa** com base nas tabelas de 2026 e servem para planejamento. Não substituem o cálculo oficial do PGDAS-D nem a orientação de um contador. Sublimites estaduais, retenções, o fator R e situações específicas podem alterar o resultado — confirme sempre no Portal do Simples Nacional ou com um profissional de contabilidade.
+
+## Calculadoras relacionadas
+
+A Calcaza reúne calculadoras tributárias e trabalhistas para o Brasil — DAS MEI, INSS, IRRF e salário líquido — sempre com a fonte oficial citada. Você pode acompanhar os guias no [blog](/blog) e ver como verificamos cada número na página [Sobre](/about).

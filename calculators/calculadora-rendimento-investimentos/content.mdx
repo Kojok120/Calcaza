@@ -1,0 +1,78 @@
+## O que esta calculadora faz
+
+Esta calculadora mostra quanto rende um investimento de **renda fixa** — um **CDB**, um título do **Tesouro Direto** ou a **poupança** — ao longo do tempo, com ou sem aportes mensais. A partir do valor inicial, do aporte mensal, do prazo (em meses) e da taxa anual, ela calcula:
+
+- o **montante bruto**, ou seja, quanto você teria antes de qualquer imposto;
+- o **rendimento bruto**, que é o lucro acumulado;
+- o **Imposto de Renda** devido no resgate;
+- o **rendimento líquido** e o **montante líquido**, que é o valor que de fato cai na sua conta.
+
+A grande diferença em relação a uma calculadora de juros compostos comum é que aqui o **IR regressivo da renda fixa** já entra na conta — e a poupança aparece corretamente isenta.
+
+## Como rende um CDB ou o Tesouro
+
+CDB e Tesouro rendem por **juros compostos** sobre a taxa contratada. O rendimento de cada período passa a fazer parte da base do período seguinte, então o crescimento é exponencial. A fórmula do montante, já com aportes mensais, é:
+
+**M = C × (1 + i)ⁿ + A × [ ((1 + i)ⁿ − 1) ÷ i ]**
+
+onde C é o valor inicial, A é o aporte mensal, i é a taxa mensal e n é o prazo em meses. A taxa anual que você informa é convertida para a equivalente mensal por capitalização composta — i_mensal = (1 + taxa_anual)^(1/12) − 1 — e não por uma simples divisão por 12.
+
+## Como rende a poupança (e por que é diferente)
+
+A **poupança** segue uma regra própria. No regime atual, com a taxa **Selic acima de 8,5% ao ano**, ela rende **0,5% ao mês mais a TR** (Taxa Referencial). Esta calculadora usa 0,5% ao mês e trata a TR como um adicional não incluído, porque a TR varia mês a mês. O ponto importante: a poupança é **isenta de Imposto de Renda**, mas costuma render menos do que um bom CDB ou um título do Tesouro mesmo depois do desconto do imposto.
+
+## A tabela regressiva do IR (de 22,5% a 15%)
+
+Na renda fixa, o Imposto de Renda segue uma tabela **regressiva** fixada pela **Lei 11.033/2004**. Quanto mais tempo o dinheiro fica aplicado, menor a alíquota:
+
+| Prazo da aplicação | Alíquota de IR |
+| --- | --- |
+| Até 180 dias | 22,5% |
+| De 181 a 360 dias | 20% |
+| De 361 a 720 dias | 17,5% |
+| Acima de 720 dias | 15% |
+
+Esta calculadora enquadra a faixa usando o prazo em meses (cada mês conta como 30 dias). Por isso, esticar uma aplicação de pouco mais de um ano para além de dois anos pode reduzir a alíquota de 17,5% para 15%.
+
+## O IR incide só sobre o rendimento, no resgate
+
+Um detalhe que confunde muita gente: o imposto morde **apenas o rendimento**, nunca o valor aplicado. Se você colocou R$ 10.000 e o montante chegou a R$ 11.200, o IR de 20% incide sobre os R$ 1.200 de lucro (R$ 240), e não sobre os R$ 11.200. O dinheiro que você investiu volta integralmente. Além disso, na maioria dos CDBs e títulos o imposto só é cobrado **no resgate**, e não mês a mês.
+
+## IOF nos primeiros 30 dias
+
+Se você resgatar a aplicação em **menos de 30 dias**, ainda há o **IOF** (Imposto sobre Operações Financeiras), que incide sobre o rendimento de forma decrescente — de 96% no primeiro dia a 0% no trigésimo. Como ele praticamente desaparece após um mês, esta calculadora não o inclui. Vale lembrar dele apenas em resgates muito rápidos.
+
+## Como preencher os campos
+
+- **Tipo de aplicação:** escolha CDB/Tesouro (com IR) ou poupança (isenta).
+- **Valor inicial:** quanto você aplica de uma vez no começo. Pode ser R$ 0.
+- **Aporte mensal:** quanto pretende depositar todo mês. Pode ser R$ 0.
+- **Prazo:** por quantos meses o dinheiro fica aplicado.
+- **Taxa anual:** a taxa do CDB/Tesouro em % ao ano. Atenção: muitos CDBs são anunciados como **percentual do CDI** (por exemplo, 110% do CDI). Converta para % ao ano antes — se o CDI está em torno de 10% ao ano, 110% do CDI equivalem a cerca de 11% ao ano. O CDI acompanha de perto a Selic.
+
+## Exemplos práticos
+
+**1. CDB de 1 ano.** Você aplica R$ 10.000 em um CDB a 12% ao ano por 12 meses. O montante bruto fica em R$ 11.200, com R$ 1.200 de rendimento. Como o prazo é de até 360 dias, a alíquota é de 20%: o IR é de R$ 240 e o **montante líquido** fica em torno de R$ 10.960.
+
+**2. CDB de 3 anos.** Os mesmos R$ 10.000 a 12% ao ano, mas por 36 meses. O montante bruto sobe para cerca de R$ 14.049, com R$ 4.049 de rendimento. Por passar de 720 dias, a alíquota cai para 15%: o IR fica em torno de R$ 607 e o montante líquido em cerca de R$ 13.442.
+
+**3. Poupança no mesmo período.** R$ 10.000 na poupança por 12 meses, a 0,5% ao mês, resultam em cerca de R$ 10.617. Não há IR — mas o rendimento (perto de R$ 617) é menor do que o do CDB acima já líquido de imposto.
+
+**4. Com aportes mensais.** Você parte de R$ 1.000 e aporta R$ 200 por mês em um CDB a 12% ao ano por 24 meses. O total investido é R$ 5.800 e o montante bruto fica em torno de R$ 6.617, com IR de 17,5% sobre o rendimento.
+
+## Erros comuns
+
+- **Comparar o rendimento bruto sem descontar o IR.** Um CDB e a poupança só são comparáveis depois de tirar o imposto da renda fixa. O número que importa é o líquido.
+- **Achar que a poupança rende mais por ser isenta.** A isenção ajuda, mas a poupança costuma render menos no fim das contas do que um CDB competitivo já líquido de IR.
+- **Confundir total investido com montante.** O montante já inclui o rendimento; o total investido é só o que você colocou.
+- **Esquecer o FGC.** CDBs e poupança contam com a garantia do **FGC**, que cobre até **R$ 250 mil** por CPF e por instituição. Títulos do Tesouro Direto não têm FGC, mas são garantidos pelo Tesouro Nacional.
+
+## De onde vêm as regras
+
+As alíquotas do IR regressivo estão na **Lei 11.033/2004**, no portal do Planalto: [planalto.gov.br](https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11.033.htm). As regras da poupança e a taxa Selic vêm do **Banco Central do Brasil** ([bcb.gov.br](https://www.bcb.gov.br)), e as condições dos títulos públicos estão no **Tesouro Direto** ([tesouro.gov.br](https://www.tesourodireto.com.br)).
+
+## Calculadoras relacionadas
+
+Para um cálculo só matemático, sem impostos, use a [Calculadora de Juros Compostos](/c/calculadora-juros-compostos). Para ver quanto sobra do salário para investir, comece pela [Calculadora de Salário Líquido](/c/calculadora-salario-liquido); e para planejar a aplicação do [13º salário](/c/calculadora-decimo-terceiro) ou do [FGTS](/c/calculadora-fgts), use essas estimativas. A Calcaza cita a fonte de cada número — veja como verificamos os cálculos na página [Sobre](/about) e acompanhe os guias no [blog](/blog).
+
+> Esta é uma simulação de caráter informativo. As taxas de mercado variam, o resultado é aproximado e não inclui IOF, TR nem taxas de administração. Não é uma recomendação de investimento. Para decisões, consulte um profissional habilitado.

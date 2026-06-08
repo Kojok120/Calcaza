@@ -1,0 +1,70 @@
+## O que esta calculadora faz
+
+Esta calculadora mostra o **novo valor do aluguel após o reajuste anual**. Você informa o **aluguel atual** e o **índice acumulado** do período (por exemplo, o IGP-M dos últimos 12 meses) e ela calcula quanto passa a ser a mensalidade e qual é o **aumento em reais**.
+
+A ideia é tirar a dúvida na data-base do contrato: quando chega o aniversário do aluguel, o proprietário aplica o índice combinado, e nem sempre é fácil saber se a conta está certa. Aqui você confere o valor em segundos, com a mesma fórmula que o mercado usa.
+
+## Como o reajuste funciona
+
+O reajuste é uma correção percentual simples. A fórmula é:
+
+> novo aluguel = aluguel atual × (1 + índice acumulado ÷ 100)
+
+E o aumento é apenas a diferença entre o novo aluguel e o atual:
+
+> valor do aumento = novo aluguel − aluguel atual
+
+Se o aluguel é de R$ 1.500 e o índice acumulado do período foi de 4%, o novo valor fica em **R$ 1.560**, um aumento de **R$ 60** por mês. O ponto mais importante é usar o **índice acumulado** (normalmente de 12 meses), e não o índice de um único mês.
+
+## Quais índices são usados
+
+Quem manda no índice é o **contrato**. Os mais comuns no aluguel residencial são:
+
+- **IGP-M** — calculado pela **Fundação Getulio Vargas (FGV)**. É o índice mais usado em contratos de aluguel.
+- **IPCA** — o índice oficial de inflação do **IBGE**, cada vez mais escolhido como alternativa ao IGP-M.
+- **INPC** — também do **IBGE**, voltado a famílias de renda mais baixa.
+
+O campo de índice nesta calculadora serve como rótulo (para você lembrar qual contrato está simulando). O que de fato define o resultado é o **percentual acumulado** que você digita.
+
+## O contrato define o índice e a data-base
+
+Antes de calcular, vale conferir duas coisas no contrato: **qual índice** foi acordado e qual é a **data-base** do reajuste — em geral, o aniversário do contrato. O reajuste é aplicado uma vez por ano, nessa data, com o acumulado do índice no período de doze meses anteriores.
+
+## Reajuste anual: o que diz a lei
+
+O aluguel residencial é regido pela **Lei do Inquilinato (Lei nº 8.245/1991)**. Por ela, o valor só pode ser reajustado **uma vez por ano**, na periodicidade mínima de doze meses. Reajustes em intervalos menores não são permitidos. A lei também garante que índice e data sejam os previstos em contrato.
+
+## Como preencher
+
+- **Aluguel atual:** o valor que você paga hoje, antes do reajuste.
+- **Índice acumulado (%):** o percentual acumulado do índice no período. Procure pelo acumulado de 12 meses na data-base. O **IGP-M** é divulgado pela FGV; o **IPCA** e o **INPC**, pelo IBGE. O campo aceita valor negativo, para o caso de deflação.
+- **Índice do contrato:** apenas o rótulo (IGP-M, IPCA, INPC ou outro). Não muda a conta.
+
+## Exemplos
+
+1. **Aluguel de R$ 1.200, IGP-M acumulado de 4,5%.** O novo aluguel fica em **R$ 1.254**, um aumento de **R$ 54** por mês.
+2. **Aluguel de R$ 2.500, índice de 8,2%.** O valor sobe para **R$ 2.705**, ou seja, **R$ 205** a mais por mês.
+3. **Aluguel de R$ 1.800 com índice negativo de −1,5% (deflação).** O reajuste **reduz** o aluguel para **R$ 1.773**, uma diferença de **R$ 27** a menos. Sim, o reajuste também pode diminuir o valor.
+
+## Erros comuns
+
+- **Usar o índice do mês em vez do acumulado.** O reajuste usa o **acumulado** do período (em geral 12 meses), não o número de um único mês. Misturar os dois gera um valor muito menor que o correto.
+- **Achar que o índice nunca cai.** O IGP-M já teve **acumulado negativo** em alguns períodos. Quando isso acontece, aplicar o índice **reduz** o aluguel — e o inquilino tem direito a essa correção para baixo.
+- **Confundir reajuste com aumento abusivo.** O reajuste pelo índice do contrato é legítimo e previsível. Aumentos muito acima disso podem ser **negociados**: índice e acordo entre as partes não se excluem.
+- **Esquecer a periodicidade anual.** O reajuste só vale uma vez a cada doze meses, na data-base do contrato.
+
+## De onde vêm os índices
+
+Confirme sempre o percentual acumulado na fonte oficial antes de fechar a conta:
+
+- **IGP-M:** [Fundação Getulio Vargas (FGV)](https://portalibre.fgv.br/) — responsável pelo cálculo e pela divulgação do índice.
+- **IPCA e INPC:** [IBGE](https://www.ibge.gov.br/) — Instituto Brasileiro de Geografia e Estatística, que apura os índices oficiais de inflação.
+- **Base legal do reajuste:** [Lei nº 8.245/1991 (Lei do Inquilinato)](https://www.planalto.gov.br/ccivil_03/leis/l8245.htm), no portal do Planalto.
+
+## Calculadoras relacionadas
+
+- [Calculadora de Financiamento Imobiliário](/c/calculadora-financiamento-imovel) — compare o custo de financiar com o de continuar no aluguel.
+- [Calculadora de Juros Compostos](/c/calculadora-juros-compostos) — entenda como percentuais acumulam ao longo do tempo.
+- [Calculadora de Salário Líquido](/c/calculadora-salario-liquido) — veja quanto sobra na renda para a moradia depois do reajuste.
+
+Esta página tem caráter informativo e apresenta uma **estimativa** do reajuste pelo índice informado. O valor final depende do índice do contrato, do percentual acumulado oficial e de eventual negociação entre as partes. Em caso de dúvida sobre o contrato, procure orientação especializada.

@@ -1,0 +1,2 @@
+export const lede =
+  'Pensando em trocar a CLT pelo PJ? Antes de comparar só o salário com o faturamento, veja o pacote completo. Esta calculadora transforma o seu salário CLT em um valor mensal equivalente — somando salário líquido, 13º, férias com 1/3, FGTS e benefícios — e estima quanto você precisaria faturar como PJ para igualar esse pacote, já considerando o imposto sobre o faturamento e o contador. É uma estimativa simplificada, com as tabelas de INSS e IRRF de 2026, feita para comparar regimes, não para recomendar mudança.';

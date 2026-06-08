@@ -43,5 +43,5 @@ export const meta: CalculatorMeta = {
       a: 'Sim. Se você já tem o valor do INSS no holerite, pode informá-lo no campo opcional para que a base do IR use exatamente esse número. Se deixar em branco, a calculadora estima o INSS pela tabela progressiva de 2026 a partir do rendimento bruto.',
     },
   ],
-  affiliates: [],
+  affiliates: ['contabilizei'],
 };

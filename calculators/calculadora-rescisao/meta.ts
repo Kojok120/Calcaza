@@ -43,5 +43,5 @@ export const meta: CalculatorMeta = {
       a: 'Não. É uma estimativa baseada nas regras e tabelas oficiais de 2026. O valor final pode mudar por causa de horas extras, comissões, faltas, descontos contratuais e do tratamento tributário específico do 13º. Para o cálculo oficial, consulte o RH, um contador ou um advogado trabalhista.',
     },
   ],
-  affiliates: [],
+  affiliates: ['contaDigital'],
 };

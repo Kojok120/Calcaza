@@ -9,6 +9,7 @@ import { Breadcrumb } from '@/components/Breadcrumb';
 import { DisclaimerNote } from '@/components/DisclaimerNote';
 import { Faq } from '@/components/Faq';
 import { RelatedCalcs } from '@/components/RelatedCalcs';
+import { AffiliateBlock } from '@/components/calc/AffiliateBlock';
 import { CATEGORY_ICON, CATEGORY_LABEL } from '@/lib/icons';
 import { SITE_INTL_LOCALE } from '@/lib/site';
 
@@ -123,6 +124,8 @@ export default async function CalculatorPage({
         <div className="mt-10 prose prose-base max-w-none text-ink-1 marker:text-ink-3 prose-headings:tracking-tight prose-headings:text-ink-1 prose-h2:mt-12 prose-h2:text-2xl prose-h2:font-semibold prose-h3:mt-8 prose-h3:text-lg prose-a:text-brand-700 prose-a:underline prose-a:underline-offset-2 prose-a:decoration-1 prose-strong:text-ink-1 prose-li:my-1">
           <Content />
         </div>
+
+        <AffiliateBlock keys={meta.affiliates} />
 
         <div className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight">Perguntas frequentes</h2>
