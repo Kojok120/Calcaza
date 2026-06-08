@@ -36,3 +36,19 @@ export function trackCalculatorUsed(): void {
 
   gtag('event', 'calculator_used', { calculator: slug });
 }
+
+/**
+ * Registra um clique em link de afiliado (engajamento de monetização) no GA4.
+ *
+ * Dispara `affiliate_click` toda vez que o usuário clica numa oferta de parceiro,
+ * com a rede (network) e a calculadora de origem. Permite ver no GA4 quais
+ * ofertas/páginas realmente geram cliques e otimizar a curadoria.
+ * Nenhum dado pessoal é enviado. No-op se o GA4 não estiver configurado.
+ */
+export function trackAffiliateClick(network: string, calculator: string): void {
+  if (typeof window === 'undefined') return;
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void })
+    .gtag;
+  if (typeof gtag !== 'function') return;
+  gtag('event', 'affiliate_click', { network, calculator });
+}

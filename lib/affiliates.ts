@@ -29,6 +29,12 @@ export type AffiliateOffer = {
    * ofertas com url vazia não são renderizadas.
    */
   url: string;
+  /**
+   * Nome do parâmetro de SubID da sua rede (para rastrear, no relatório da rede,
+   * QUAL calculadora gerou a conversão). Padrão: 'subid'. Ajuste conforme a rede
+   * (ex.: 'aff_sub', 'u1', 'subId'). Use '' para não anexar SubID.
+   */
+  subIdParam?: string;
 };
 
 export const AFFILIATE_OFFERS: Record<string, AffiliateOffer> = {
@@ -83,4 +89,16 @@ export function getOffers(keys: string[] | undefined): AffiliateOffer[] {
   return keys
     .map((k) => AFFILIATE_OFFERS[k])
     .filter((o): o is AffiliateOffer => Boolean(o && o.url));
+}
+
+/**
+ * URL final da oferta com o SubID da calculadora anexado (quando aplicável),
+ * para que o relatório da rede mostre qual calculadora converteu.
+ */
+export function offerUrlWithSubId(offer: AffiliateOffer, slug: string): string {
+  if (!offer.url) return offer.url;
+  const param = offer.subIdParam === undefined ? 'subid' : offer.subIdParam;
+  if (!param || !slug) return offer.url;
+  const sep = offer.url.includes('?') ? '&' : '?';
+  return `${offer.url}${sep}${param}=${encodeURIComponent(slug)}`;
 }

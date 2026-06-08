@@ -125,7 +125,7 @@ export default async function CalculatorPage({
           <Content />
         </div>
 
-        <AffiliateBlock keys={meta.affiliates} />
+        <AffiliateBlock keys={meta.affiliates} slug={meta.slug} />
 
         <div className="mt-12">
           <h2 className="text-2xl font-semibold tracking-tight">Perguntas frequentes</h2>

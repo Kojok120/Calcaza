@@ -1,5 +1,8 @@
+'use client';
+
 import { ChevronRight } from 'lucide-react';
-import { getOffers } from '@/lib/affiliates';
+import { getOffers, offerUrlWithSubId } from '@/lib/affiliates';
+import { trackAffiliateClick } from '@/lib/analytics';
 
 /**
  * Bloco de ofertas de parceiros (afiliados), curado por calculadora.
@@ -8,10 +11,17 @@ import { getOffers } from '@/lib/affiliates';
  * têm URL configurada (ver lib/affiliates.ts). Se não houver nenhuma, não
  * renderiza nada — assim páginas sem parceiro relevante ficam limpas.
  *
- * Inclui divulgação obrigatória (publicidade/afiliado) e os links saem com
- * rel="sponsored nofollow noopener".
+ * Rastreamento: cada link anexa o SubID da calculadora (relatório da rede) e
+ * dispara o evento `affiliate_click` no GA4. Os links saem com
+ * rel="sponsored nofollow noopener" e divulgação obrigatória.
  */
-export function AffiliateBlock({ keys }: { keys: string[] | undefined }) {
+export function AffiliateBlock({
+  keys,
+  slug,
+}: {
+  keys: string[] | undefined;
+  slug: string;
+}) {
   const offers = getOffers(keys);
   if (offers.length === 0) return null;
 
@@ -30,9 +40,10 @@ export function AffiliateBlock({ keys }: { keys: string[] | undefined }) {
         {offers.map((o) => (
           <li key={o.network + o.url}>
             <a
-              href={o.url}
+              href={offerUrlWithSubId(o, slug)}
               target="_blank"
               rel="sponsored nofollow noopener"
+              onClick={() => trackAffiliateClick(o.network, slug)}
               className="group flex h-full flex-col rounded-md border border-border-default bg-surface-0 p-5 transition-colors hover:bg-surface-1 hover:border-border-strong"
             >
               <p className="text-base font-semibold leading-snug text-ink-1">
