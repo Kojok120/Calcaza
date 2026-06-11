@@ -1,0 +1,50 @@
+## O que esta calculadora faz
+
+Esta calculadora responde a uma pergunta que aparece em quase toda compra grande: **vale a pena parcelar ou é melhor pagar à vista?** Ela parte do preço à vista, do valor de cada parcela e do número de parcelas para mostrar três coisas:
+
+- o **total parcelado**, ou seja, a soma de todas as parcelas;
+- os **juros embutidos em reais**, que é quanto a mais você paga em relação ao à vista;
+- a **taxa mensal implícita** (% a.m.) e a **taxa anual equivalente** (% a.a.) escondidas nesse parcelamento.
+
+A ideia central é simples: mesmo quando a loja anuncia "parcelado **sem juros**", muitas vezes existe um desconto para quem paga à vista. Quando há esse desconto, o preço parcelado fica mais alto que o à vista — e essa diferença funciona, na prática, como juros. Esta é uma **estimativa** para você comparar ofertas, e não a taxa contratual da loja.
+
+## A fórmula e de onde vêm os juros embutidos
+
+Para estimar os juros do parcelamento, tratamos o **preço à vista** como o **valor presente** de um financiamento e cada parcela como o pagamento de uma anuidade, com a primeira parcela vencendo em torno de 30 dias. A relação é:
+
+**valor à vista = parcela × [ 1 − (1 + i)^(−n) ] ÷ i**
+
+Onde **i** é a taxa mensal implícita e **n** é o número de parcelas. A calculadora resolve essa equação por bissecção (testando taxas de 0% a 500% ao mês até equilibrar os dois lados) e encontra o **i** que iguala o à vista ao fluxo das parcelas. Para uma única parcela (n = 1), o cálculo é direto: i = parcela ÷ à vista − 1.
+
+Esse raciocínio de **taxa efetiva** é o mesmo que está por trás do **Custo Efetivo Total (CET)**, que o **Banco Central do Brasil** exige que seja informado em operações de crédito e financiamento. Para entender o conceito e simular fluxos de pagamento, o Banco Central mantém materiais sobre o [CET](https://www.bcb.gov.br/cidadaniafinanceira/custoefetivototal) e a [Calculadora do Cidadão](https://www3.bcb.gov.br/CALCIDADAO/). A taxa anual equivalente que mostramos usa capitalização composta: (1 + i)¹² − 1.
+
+## Como preencher os campos
+
+- **Preço à vista:** o preço pagando à vista, já com o desconto à vista, se houver. É a base da comparação.
+- **Valor da parcela:** quanto você paga em cada parcela do plano parcelado.
+- **Número de parcelas:** de 1 a 48 vezes.
+
+Se o preço parcelado for o mesmo do à vista (sem desconto à vista), a calculadora indica que **não há juros embutidos**. Se o total das parcelas for maior, ela calcula a taxa que explica essa diferença.
+
+## Exemplos práticos
+
+**1. "Sem juros" com juros embutidos.** Um produto custa **R$ 1.000 à vista** ou **10× de R$ 115**. O total parcelado é **R$ 1.150**, ou seja, **R$ 150** a mais que o à vista. A taxa mensal implícita fica em torno de **2,63% ao mês**, o que equivale a cerca de **36,5% ao ano**. Mesmo anunciado como "sem juros", parcelar aqui custa caro.
+
+**2. Parcelamento realmente sem juros.** O mesmo produto sai por **R$ 1.000 à vista** ou **10× de R$ 100**. O total parcelado também é **R$ 1.000**, os juros embutidos são **R$ 0** e a taxa implícita é **0% ao mês**. Nesse caso, parcelar é tão bom quanto pagar à vista — e ainda preserva o seu dinheiro em caixa.
+
+**3. À vista mais caro que o parcelado.** Imagine **R$ 1.000 à vista** contra **10× de R$ 90**, totalizando **R$ 900**. O parcelado fica **mais barato** que o à vista. A calculadora aponta que não há juros embutidos: parcelar é a opção mais vantajosa.
+
+**4. Comparando com o rendimento do dinheiro.** Se um parcelamento embute **2,63% ao mês** e uma aplicação de baixo risco rende bem menos que isso no período, pagar à vista para pegar o desconto tende a ser melhor. Quando o rendimento possível supera os juros embutidos, parcelar e deixar o dinheiro rendendo pode compensar.
+
+## Erros comuns
+
+- **Acreditar que "sem juros" é sempre sem juros.** O custo aparece como desconto à vista. Se há desconto, há juros embutidos no parcelado.
+- **Comparar só o valor da parcela.** Uma parcela "baixa" pode esconder muitas vezes e um total bem mais alto. Olhe o **total parcelado** e a **taxa**.
+- **Esquecer o rendimento do próprio dinheiro.** Quem tem o valor à vista guardado pode aplicar em CDB ou Tesouro Selic. A decisão de parcelar deveria comparar a taxa embutida com esse rendimento — os índices de referência são divulgados pelo [Banco Central](https://www.bcb.gov.br/).
+- **Confundir esta estimativa com a taxa oficial.** O número aqui explica a diferença entre à vista e parcelado; não é o CET contratual, que inclui tarifas, seguros e impostos.
+
+## Calculadoras relacionadas
+
+Para ver quanto o seu dinheiro renderia se ficasse aplicado em vez de antecipar o pagamento, use a [Calculadora de Juros Compostos](/c/calculadora-juros-compostos/). Se a dúvida é sobre atrasar a fatura ou usar o rotativo, veja a [Calculadora de Juros do Cartão de Crédito](/c/calculadora-juros-cartao/). E, para comparar financiar um carro com pagar à vista, vale a [Calculadora de Financiamento de Veículo](/c/calculadora-financiamento-veiculo/).
+
+> Esta é uma estimativa de caráter informativo. A taxa implícita é uma forma de comparar ofertas em base comum e não substitui o Custo Efetivo Total (CET) informado pela loja ou pela instituição financeira. Antes de decidir, considere o seu orçamento e, se precisar, consulte um profissional.

@@ -1,0 +1,62 @@
+## O que esta calculadora faz?
+
+Esta calculadora estima o **Imposto de Renda da Pessoa Física (IRPF)** no acerto da declaração anual, considerando o ano-calendário de 2026. A partir dos seus rendimentos tributáveis, das deduções e do **IRRF já retido na fonte** ao longo do ano, ela calcula o imposto devido pelos dois modelos de declaração — **simplificado** e **completo** — e mostra o mais vantajoso. Em seguida, compara esse imposto devido com o que já foi retido e indica se há **valor a restituir** ou **imposto a pagar**.
+
+O resultado é uma **estimativa educativa**. Ele ajuda você a ter uma ideia aproximada da sua situação antes de declarar, mas não substitui o programa oficial da Receita Federal, que trata de detalhes como rendimentos isentos, tributação exclusiva, carnê-leão e situações particulares.
+
+## A fórmula e de onde vêm os valores
+
+O cálculo segue a lógica da própria Declaração de Ajuste Anual. Há dois caminhos, e a calculadora usa o que gera **menos imposto**:
+
+- **Modelo simplificado:** aplica um desconto de **20% sobre os rendimentos tributáveis**, limitado a **R$ 17.640,00 por ano**, no lugar de todas as deduções legais. A base de cálculo fica em `rendimentos − desconto simplificado`.
+- **Modelo completo:** soma as deduções reais — **R$ 2.275,08 por dependente**, despesas com **instrução** (limite de **R$ 3.561,50 por pessoa**, declarante e cada dependente), despesas com **saúde** (sem limite) e a **contribuição previdenciária** (INSS) paga no ano. A base fica em `rendimentos − deduções`.
+
+Sobre a base, aplica-se a **tabela anual progressiva de 2026**, que é a tabela mensal multiplicada por 12:
+
+| Base de cálculo anual (R$) | Alíquota | Parcela a deduzir (R$) |
+|----------------------------|----------|------------------------|
+| Até 29.145,60 | isento | — |
+| 29.145,61 a 33.919,80 | 7,5% | 2.185,92 |
+| 33.919,81 a 45.012,60 | 15,0% | 4.729,92 |
+| 45.012,61 a 55.976,16 | 22,5% | 8.105,88 |
+| Acima de 55.976,16 | 27,5% | 10.904,76 |
+
+O imposto de cada modelo é `base × alíquota − parcela a deduzir`, nunca abaixo de zero. O **imposto devido** é o menor entre os dois modelos. Por fim, o acerto do ano é `imposto devido − IRRF retido`: se for negativo, é **a restituir**; se positivo, é **a pagar**; se zero, está **quitado**.
+
+Os valores vêm das fontes oficiais de 2026: a [tabela do IRPF da Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026) e os limites de dedução previstos na Lei nº 9.250/95. A [Lei nº 15.270/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm) criou, a partir de 2026, a **isenção mensal para rendimentos até R$ 5.000** e um redutor decrescente até **R$ 7.350** por mês: isso muda o quanto é **retido a cada mês**, e o ajuste anual reconcilia esse valor com o imposto devido. A tabela progressiva em si não foi alterada.
+
+## Como preencher
+
+- **Rendimentos tributáveis no ano:** a soma dos rendimentos sujeitos à tabela (salários, pró-labore, aposentadoria, aluguéis etc.).
+- **IRRF já retido na fonte:** o imposto que a fonte pagadora reteve durante o ano, que aparece no comprovante de rendimentos.
+- **Dependentes:** quantos você declara para fins de IR. Cada um deduz R$ 2.275,08 no modelo completo.
+- **Despesas com educação:** instrução própria e de dependentes, com limite de R$ 3.561,50 por pessoa.
+- **Despesas com saúde:** médicos, dentistas, planos e exames; não há limite legal.
+- **Contribuição ao INSS:** o quanto você pagou de previdência oficial no ano.
+
+## Exemplos práticos
+
+**1. CLT com salário médio — R$ 60.000 no ano, R$ 3.000 retidos, sem deduções.** O modelo simplificado desconta R$ 12.000 (20%), deixando base de R$ 48.000. O imposto pela tabela é de cerca de **R$ 2.694,12**. Como já foram retidos R$ 3.000, o valor aproximado **a restituir** é de **R$ 305,88**.
+
+**2. Renda alta com muitas deduções — R$ 120.000, 2 dependentes, R$ 5.000 de educação, R$ 8.000 de saúde, R$ 9.600 de INSS.** Aqui o modelo completo vence: as deduções somam cerca de R$ 27.150, a base cai para perto de R$ 92.850 e o imposto devido fica em torno de **R$ 14.628,95**, contra cerca de R$ 17.244 do simplificado. Com R$ 18.000 retidos, o valor aproximado **a restituir** é de cerca de **R$ 3.371,05**.
+
+**3. Faixa inicial — R$ 40.000 no ano, R$ 500 retidos.** O desconto simplificado de R$ 8.000 deixa base de R$ 32.000, na faixa de 7,5%: imposto de cerca de **R$ 214,08**. Como foram retidos R$ 500, sobra um valor aproximado **a restituir** de **R$ 285,92**.
+
+## Erros comuns
+
+- **Confundir alíquota nominal com efetiva.** A faixa pode ser de 27,5%, mas a parcela a deduzir e as deduções da base fazem a alíquota efetiva sobre os rendimentos ser bem menor.
+- **Escolher o modelo errado.** Quem tem poucas deduções costuma pagar menos no simplificado; quem tem muitos gastos com saúde, educação e dependentes tende a se beneficiar do completo. A calculadora já aponta o mais vantajoso.
+- **Achar que toda restituição é "dinheiro extra".** A restituição é a devolução do que foi retido **a mais** durante o ano — não um bônus.
+- **Confundir o redutor mensal com a tabela anual.** A isenção até R$ 5.000/mês de 2026 muda a retenção mês a mês; no ajuste anual, o que vale é o confronto entre o imposto devido e o total retido.
+
+## Calculadoras relacionadas
+
+- [Calculadora de IRRF](/c/calculadora-irrf) — o imposto retido na fonte, mês a mês, na folha de pagamento.
+- [Calculadora de Salário Líquido](/c/calculadora-salario-liquido) — quanto cai na conta depois de INSS e IRRF.
+- [Calculadora de INSS](/c/calculadora-inss) — a contribuição previdenciária que também deduz no modelo completo.
+
+Para acompanhar mudanças nas regras e nos prazos, veja os guias no [blog](/blog) e entenda como conferimos cada número na página [Sobre](/about).
+
+## Aviso
+
+Esta é uma estimativa educativa baseada na tabela e nas deduções oficiais de 2026 e pode não refletir a sua situação específica (rendimentos isentos, tributação exclusiva, carnê-leão, deduções particulares). Para declarar, use o programa oficial da Receita Federal ou consulte um contador.

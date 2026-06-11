@@ -1,0 +1,51 @@
+## O que esta calculadora faz
+
+Esta calculadora estima quanto a dívida do seu cartão de crédito cresce quando você **não paga a fatura inteira** e o saldo cai no **crédito rotativo** — ou quando a fatura atrasa. A partir de três informações, ela mostra o tamanho aproximado do problema:
+
+- o **saldo devedor**, ou seja, a parte da fatura que ficou sem pagar;
+- a **taxa de juros ao mês** cobrada pelo banco;
+- o **número de meses** em que a dívida ficou rolando.
+
+Com isso, ela calcula a **dívida total estimada**, o **total em juros**, os **juros do primeiro mês** e a **taxa anual equivalente**. Esse último número costuma assustar: é ele que revela como uma taxa que parece "pequena" ao mês vira um custo enorme ao ano. Tudo aqui é uma **estimativa** do valor nominal, para ajudar no planejamento — não substitui os números oficiais da sua fatura.
+
+## Por que o rotativo é o crédito mais caro
+
+O rotativo do cartão de crédito é, segundo o **Banco Central do Brasil**, uma das modalidades de crédito **mais caras do país**. Quando você paga menos que o valor total da fatura na data de vencimento, o saldo restante é financiado automaticamente até a fatura seguinte, com juros altos. Como o cartão é um crédito de uso imediato e sem garantia, o banco cobra caro por esse financiamento.
+
+O agravante é que os juros do cartão são **compostos**: a cada mês, os juros do período anterior passam a fazer parte da base sobre a qual novos juros incidem. É o famoso **"juros sobre juros"**. Por isso a dívida não cresce em linha reta — ela acelera. Quanto mais tempo você fica no rotativo, mais rápido o valor sobe.
+
+## A fórmula e de onde vêm os números
+
+O cálculo usa capitalização composta sobre o saldo devedor:
+
+**Montante = Saldo × (1 + i)ⁿ**
+
+Onde:
+
+- **Saldo** é o valor não pago da fatura;
+- **i** é a taxa de juros mensal em decimal (14% = 0,14);
+- **n** é o número de meses no rotativo.
+
+Os **juros totais** são o montante menos o saldo original. A **taxa anual equivalente** é (1 + i)¹² − 1, que mostra o custo acumulado em um ano. A taxa real do rotativo é divulgada mês a mês pelo [Banco Central do Brasil](https://www.bcb.gov.br/estatisticas/txjuros), e muda conforme o banco — por isso o campo da taxa é ajustável. Desde 2024, a [Lei 14.690/2023](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14690.htm) determina que o total de **juros e encargos do rotativo (somado ao parcelamento da fatura) não pode ultrapassar 100%** do valor original da dívida — ou seja, os encargos não podem fazer você dever mais que o dobro.
+
+## Exemplos práticos
+
+**1. Um único mês de atraso.** Você deixou R$ 2.000 sem pagar, com taxa de 14% ao mês. No fim do primeiro mês, a dívida estimada sobe para **R$ 2.280,00** — são R$ 280 só de juros. Parece pouco, mas é o começo da bola de neve.
+
+**2. Seis meses no rotativo.** O mesmo saldo de R$ 2.000 a 14% ao mês, mas deixado rolar por seis meses. Com os juros compostos, a dívida estimada chega a cerca de **R$ 4.389,95** — quase o dobro do valor original, com aproximadamente R$ 2.389,95 só de juros. Aqui já se nota como o rotativo explode.
+
+**3. Um ano inteiro de rotativo.** Imagine R$ 1.000 a 14% ao mês por 12 meses. A dívida estimada salta para cerca de **R$ 4.817,90** — quase cinco vezes o saldo inicial. Isso acontece porque a **taxa anual equivalente** de 14% ao mês passa de **381% ao ano**. É esse número que mostra por que sair do rotativo é urgente.
+
+## Erros comuns
+
+- **Olhar só a taxa mensal.** 14% ao mês parece "aceitável", mas equivale a mais de 381% ao ano. Sempre confira a taxa anual equivalente.
+- **Achar que os juros crescem em linha reta.** No rotativo, o crescimento é exponencial. Dobrar o tempo costuma fazer a dívida crescer muito mais que o dobro.
+- **Confundir saldo devedor com fatura total.** O rotativo incide apenas sobre a parte que ficou sem pagar, não sobre a fatura inteira.
+- **Ignorar a saída pelo parcelamento.** O parcelamento da fatura oferecido pelo banco costuma ter juros menores que o rotativo. Trocar uma dívida pela outra, ou por um crédito pessoal mais barato, reduz bastante o custo total.
+- **Esquecer dos outros encargos.** Esta é uma estimativa só dos juros. IOF, multa por atraso e mora podem entrar na conta real.
+
+## Calculadoras relacionadas
+
+Para entender melhor o efeito do "juros sobre juros", veja a [Calculadora de Juros Compostos](/c/calculadora-juros-compostos). Se quer fazer o caminho inverso e ver o dinheiro render a seu favor, use a [Calculadora de Rendimento de Investimentos](/c/calculadora-rendimento-investimentos). E, ao planejar dívidas maiores, a [Calculadora de Financiamento de Imóvel](/c/calculadora-financiamento-imovel) ajuda a comparar prazos e parcelas. A Calcaza cita a fonte de cada número — veja como verificamos os cálculos na página [Sobre](/about) e acompanhe os guias no [blog](/blog).
+
+> Esta é uma **estimativa** de juros do cartão de crédito, de caráter informativo. Ela mostra o valor nominal com base na taxa que você informar e não substitui orientação financeira. A taxa real do rotativo varia por banco e por mês, e a fatura pode ter IOF, multa e mora. Confira os valores exatos com a sua instituição financeira.

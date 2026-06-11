@@ -1,0 +1,56 @@
+## O que esta calculadora faz
+
+Esta calculadora estima **quanto rende a poupança** ao longo do tempo, com ou sem depósitos mensais. A partir do valor inicial, do depósito mensal, do prazo (em meses) e das taxas de mercado — a **Selic meta** e a **TR** —, ela mostra:
+
+- o **valor final**, ou seja, quanto você teria ao fim do prazo;
+- o **total depositado**, que é a soma de tudo o que você colocou;
+- o **rendimento** acumulado no período;
+- a **taxa mensal aplicada** e **qual regra** da lei foi usada.
+
+A poupança aparece corretamente **isenta de Imposto de Renda**. A grande vantagem desta ferramenta em relação a uma calculadora de juros compostos genérica é que ela aplica a **regra legal de remuneração da poupança**, que muda de regime conforme a Selic. E, como a Selic e a TR variam, os dois campos são **editáveis** para você simular com os números atuais.
+
+## A regra da poupança e de onde ela vem
+
+O rendimento da poupança não é definido pelos bancos: ele é fixado pela **Lei nº 12.703/2012**, em vigor desde 4 de maio de 2012. Essa lei criou **dois regimes**, separados pela taxa Selic meta:
+
+| Cenário da Selic meta | Rendimento da poupança |
+| --- | --- |
+| **Selic acima de 8,5% ao ano** | 0,5% ao mês + TR |
+| **Selic igual ou abaixo de 8,5% ao ano** | 70% da Selic (ao mês) + TR |
+
+Quando a Selic está alta (acima de 8,5% ao ano), o rendimento é travado em **0,5% ao mês mais a TR**. Quando a Selic cai para 8,5% ou menos, a poupança passa a render **70% da Selic** — no equivalente mensal — **mais a TR**, e por isso rende bem menos em cenários de juros baixos. O limite de 8,5% foi pensado justamente para evitar que a poupança ficasse atraente demais quando os juros caem.
+
+As alíquotas e a regra estão no texto da [Lei nº 12.703/2012, no portal do Planalto](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12703.htm). A operacionalização do cálculo, a Selic e a TR são divulgadas pelo **Banco Central do Brasil**: veja a página de [remuneração dos depósitos de poupança](https://www4.bcb.gov.br/pec/poupanca/poupanca.asp) e o [histórico de taxas de juros (Copom)](https://www.bcb.gov.br/controleinflacao/historicotaxasjuros).
+
+No cenário de junho de 2026, a Selic meta está em **14,5% ao ano** (definida pelo Copom) e a TR em torno de **0,17% ao mês**. Como 14,5% é maior que 8,5%, vale a regra de **0,5% + TR**, resultando em cerca de **0,67% ao mês**.
+
+## Como preencher os campos
+
+- **Valor inicial:** quanto você deposita de uma vez no começo. Pode ser R$ 0 se você só pretende fazer aportes mensais.
+- **Depósito mensal:** quanto pretende guardar todo mês. Pode ser R$ 0.
+- **Prazo:** por quantos meses o dinheiro fica na poupança (de 1 a 600 meses).
+- **Selic meta:** a taxa Selic em % ao ano. Ela muda a cada reunião do Copom (cerca de oito por ano), então confira o valor mais recente no site do Banco Central.
+- **TR mensal:** a Taxa Referencial em % ao mês. A TR é calculada e divulgada mensalmente pelo Banco Central; por anos ficou zerada, mas voltou a ter valores positivos com a Selic mais alta.
+
+## Exemplos práticos
+
+**1. R$ 10.000 por 12 meses (Selic 14,5%, TR 0,17%).** Como a Selic está acima de 8,5%, vale a regra de 0,5% + TR, ou seja, cerca de 0,67% ao mês. Ao fim de um ano, o valor final fica em torno de **R$ 10.834**, com aproximadamente **R$ 834 de rendimento** — tudo isento de Imposto de Renda.
+
+**2. Mesmo valor, mas com Selic baixa (8% ao ano, TR 0,10%).** Agora a Selic está abaixo de 8,5%, então vale a regra de 70% da Selic + TR: 70% de 8% dá 5,6% ao ano, ou cerca de 0,467% ao mês, mais a TR. O rendimento mensal cai para perto de 0,57% e, em 12 meses, os R$ 10.000 rendem aproximadamente **R$ 702** — bem menos do que no cenário de juros altos. Esse exemplo mostra na prática por que a regra dos dois regimes existe.
+
+**3. Com depósitos mensais.** Você começa com R$ 1.000 e deposita R$ 200 por mês durante 24 meses, com Selic em 14,5%. O total depositado é R$ 5.800 e o valor final fica em torno de **R$ 6.362**, com cerca de **R$ 562 de rendimento**.
+
+**4. Rendimento de um único mês.** R$ 10.000 a 0,5% ao mês (sem TR) rendem exatamente **R$ 50** em um mês. É a forma mais simples de enxergar a taxa básica de 0,5% do regime de Selic alta.
+
+## Erros comuns
+
+- **Achar que a poupança rende mais por ser isenta de IR.** A isenção ajuda, mas a poupança costuma render **menos** do que um bom CDB ou um título do Tesouro Direto, mesmo depois de descontar o imposto da renda fixa. A regra de remuneração da poupança é limitada por lei.
+- **Esquecer que a Selic e a TR mudam.** O rendimento da poupança não é fixo: depende da Selic (que muda a cada Copom) e da TR (que muda todo mês). Por isso a calculadora deixa os dois valores editáveis — atualize-os antes de simular.
+- **Ignorar a data de aniversário.** Os bancos creditam o rendimento na data de aniversário de cada depósito, e não no fim do mês corrido. Um depósito sacado antes de completar o mês perde o rendimento daquele período.
+- **Confundir total depositado com valor final.** O valor final já inclui o rendimento; o total depositado é só o que você colocou.
+
+## Calculadoras relacionadas
+
+Para comparar a poupança com um CDB ou com o Tesouro Direto, já com o desconto do Imposto de Renda, use a [Calculadora de Rendimentos (CDB e Poupança)](/c/calculadora-rendimento-investimentos/). Para um cálculo só matemático de juros sobre juros, sem a regra da poupança, veja a [Calculadora de Juros Compostos](/c/calculadora-juros-compostos/). E, se a sua meta é juntar dinheiro para a entrada de um imóvel, compare o esforço com a [Calculadora de Financiamento de Imóvel](/c/calculadora-financiamento-imovel/).
+
+> Esta é uma simulação de caráter informativo. A Selic e a TR informadas variam ao longo do tempo, o resultado é aproximado e os bancos creditam o rendimento na data de aniversário de cada depósito. Não é uma recomendação de investimento. Para decisões, consulte um profissional habilitado.

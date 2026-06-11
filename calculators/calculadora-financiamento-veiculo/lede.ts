@@ -1,0 +1,2 @@
+export const lede =
+  'Simule o financiamento do seu veículo pela Tabela Price, o sistema de parcela fixa mais usado no crédito de carros. Informe o valor do veículo, o percentual de entrada, o prazo em meses e a taxa de juros ao mês: a calculadora mostra a parcela mensal, a entrada, o total de juros e o total pago, para você comparar cenários antes de fechar o contrato. O resultado é uma estimativa e não inclui o CET.';

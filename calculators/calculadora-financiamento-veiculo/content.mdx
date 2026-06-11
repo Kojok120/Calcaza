@@ -1,0 +1,47 @@
+## O que esta calculadora faz?
+
+Esta calculadora simula o **financiamento de um veículo** — carro, moto ou caminhão — pela **Tabela Price**, o sistema de parcela fixa mais usado no CDC (Crédito Direto ao Consumidor) das financeiras e concessionárias. A partir do valor do veículo, do percentual de entrada, do prazo em meses e da taxa de juros ao mês, ela mostra a **parcela mensal**, o valor da **entrada**, o **valor financiado**, o **total de juros** e o **total pago** ao fim do contrato.
+
+A ideia é ajudar você a comparar cenários antes de fechar negócio na loja: quanto pesa aumentar a entrada, como o prazo muda a parcela e quanto de juros você paga em cada combinação. O resultado é uma **estimativa** que considera apenas juros e amortização — logo abaixo explicamos o que fica de fora.
+
+## A fórmula e de onde vêm os valores
+
+Na **Tabela Price** (sistema francês), a parcela é fixa do primeiro ao último mês. O cálculo parte do valor financiado, da taxa mensal e do número de parcelas:
+
+> entrada = valor do veículo × (percentual de entrada ÷ 100)
+> valor financiado = valor do veículo − entrada
+> parcela = valor financiado × i × (1 + i)ⁿ ÷ [ (1 + i)ⁿ − 1 ]
+
+onde **i** é a taxa de juros ao mês (em decimal, ou seja, 1,5% = 0,015) e **n** é o número de parcelas. Quando a taxa é zero, a fórmula se reduz a dividir o valor financiado pelo número de parcelas (parcela = valor financiado ÷ n). Em seguida, o total pago é a soma das parcelas mais a entrada, e o total de juros é a soma das parcelas menos o valor financiado.
+
+Um ponto importante de honestidade: esta conta usa a taxa **ao mês** exatamente como informada e **não inclui o CET (Custo Efetivo Total)**. O CET reúne, além dos juros, o **IOF** (Imposto sobre Operações Financeiras), a **tarifa de cadastro**, o **registro do contrato (gravame)**, eventuais **seguros** e outras tarifas. Por isso, a parcela real do banco tende a ser maior do que a estimada aqui. As taxas médias praticadas no financiamento de veículos e o conceito de CET podem ser consultados no [Banco Central do Brasil](https://www.bcb.gov.br/estatisticas/txjuros), que também mantém material de [educação financeira sobre crédito](https://www.bcb.gov.br/cidadaniafinanceira). Vale notar que os juros do financiamento de carro costumam ser **mais altos que os do imóvel**, porque o veículo se desvaloriza e oferece menos garantia à instituição.
+
+## Como preencher
+
+- **Valor do veículo:** o preço total negociado, à vista, do carro ou da moto.
+- **Entrada (%):** o percentual que você paga à vista. O padrão é 20%, mas você pode testar de 0% a 100%. Quanto maior a entrada, menor o valor financiado e menos juros no total.
+- **Prazo (meses):** o número de parcelas, de 12 a 60 meses. Por exemplo, 48 meses equivalem a 4 anos.
+- **Taxa de juros (% a.m.):** a taxa **ao mês** informada na proposta. Cuidado para não digitar a taxa anual aqui — no CDC de veículos, a taxa costuma ser apresentada por mês.
+
+## Exemplos práticos
+
+**1. Carro de R$ 80.000, entrada de 20%, 48 meses, 1,5% a.m.** A entrada é de R$ 16.000 e o valor financiado fica em R$ 64.000. A parcela mensal é de aproximadamente **R$ 1.880,00**, fixa nos 48 meses. O total de juros gira em torno de R$ 26.240,00 e o total pago, somando a entrada, fica perto de R$ 106.240,00.
+
+**2. Aumentar a entrada e encurtar o prazo.** No mesmo carro de R$ 100.000 com **40% de entrada** (R$ 40.000), em **24 meses** a 1,2% a.m., financia-se R$ 60.000. A parcela sobe para cerca de **R$ 2.892,12**, mas o total de juros cai para aproximadamente R$ 9.410,97. Parcela maior, custo total bem menor.
+
+**3. Sem entrada e prazo longo.** Em um veículo de R$ 50.000 **sem entrada**, em **60 meses** a 1,99% a.m., a parcela fica em torno de **R$ 1.434,92**. O total de juros chega a cerca de R$ 36.095,07 — quase 72% do valor financiado, mostrando como prazo longo e ausência de entrada encarecem o negócio.
+
+## Erros comuns
+
+- **Confundir taxa ao mês com taxa ao ano.** No financiamento de veículo, a taxa costuma ser ao mês (a.m.). Digitar uma taxa anual no campo mensal infla muito a parcela.
+- **Achar que a parcela da simulação é a do banco.** Ela não inclui o CET (IOF, tarifa de cadastro, gravame, seguros). A parcela real costuma ser maior.
+- **Olhar só o valor da parcela.** Uma parcela menor em 60 meses pode esconder muito mais juros no total. Compare sempre o total pago.
+- **Ignorar a entrada.** Aumentar a entrada reduz o valor financiado e o total de juros, e costuma melhorar as condições oferecidas.
+
+## Calculadoras relacionadas
+
+- [Calculadora de Financiamento Imobiliário](/c/calculadora-financiamento-imovel/) — compare os sistemas SAC e Price para o crédito da casa própria.
+- [Calculadora de Juros Compostos](/c/calculadora-juros-compostos/) — entenda como os juros se acumulam ao longo do tempo.
+- [Calculadora de Parcelamento](/c/calculadora-parcelamento/) — simule compras parceladas com juros.
+
+Esta página tem caráter informativo e apresenta uma **estimativa**. Os valores reais dependem da taxa, do CET, dos seguros e das condições de cada instituição. Antes de fechar o contrato, use a simulação oficial do banco e confira o CET na proposta.

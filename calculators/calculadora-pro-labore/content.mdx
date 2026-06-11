@@ -1,0 +1,51 @@
+## O que esta calculadora faz
+
+Esta calculadora estima os **descontos do próprio sócio sobre o pró-labore** e quanto sobra líquido no mês. O pró-labore é a remuneração paga ao sócio ou administrador que trabalha na empresa — é o pagamento pelo trabalho dele na gestão do negócio, e não pelo capital investido. Sobre esse valor incidem dois descontos: a contribuição ao **INSS** (o sócio é contribuinte individual) e o **Imposto de Renda Retido na Fonte (IRRF)**.
+
+Você informa o pró-labore bruto, o regime de INSS e os dependentes; a calculadora mostra o INSS, o IRRF, o redutor de 2026 e o **pró-labore líquido** em destaque. O resultado é uma **estimativa** dos descontos do sócio. Ele não inclui a cota patronal de 20% que a empresa recolhe à parte, nem a distribuição de lucros.
+
+## A fórmula e de onde vêm as alíquotas
+
+O cálculo segue três etapas, com valores oficiais de 2026:
+
+1. **INSS do sócio.** Como contribuinte individual, o sócio tem **11%** descontados do pró-labore no caso geral, quando a empresa também recolhe a cota patronal de 20% à parte. Esse desconto incide sobre uma base **limitada ao teto do INSS de 2026, R$ 8.475,55** — ou seja, a contribuição máxima do sócio é de **R$ 932,31** (11% × 8.475,55). Quando não há cota patronal e o contribuinte recolhe por conta própria, a alíquota é de **20%**, também limitada ao teto (máximo de R$ 1.695,11). A regra está na [página do INSS](https://www.gov.br/inss/pt-br/saiba-mais) (Lei nº 8.212/91, art. 21).
+
+2. **IRRF.** Sobre o pró-labore aplica-se a **tabela mensal do Imposto de Renda de 2026** da [Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026), depois de descontar o INSS e a dedução de R$ 189,59 por dependente. A base do IRRF é `pró-labore − INSS − dependentes × 189,59`, e o imposto da faixa é `base × alíquota − parcela a deduzir`.
+
+3. **Redutor de 2026.** Pela [Lei nº 15.270/2025](https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15270.htm), quem recebe pró-labore bruto de até **R$ 5.000** por mês fica **isento de IRRF**. Entre R$ 5.000 e R$ 7.350, um redutor (`978,62 − 0,133145 × pró-labore`) diminui o imposto; acima de R$ 7.350 vale a tabela cheia.
+
+O pró-labore líquido é, então, `pró-labore − INSS − IRRF`.
+
+## Como preencher os campos
+
+- **Pró-labore bruto mensal:** o valor cheio definido para a remuneração do sócio, antes dos descontos.
+- **Regime de INSS do sócio:** escolha **11%** se a empresa recolhe a cota patronal de 20% à parte (caso geral de sociedade que recolhe o patronal); escolha **20%** se o contribuinte individual recolhe por conta própria, sem cota patronal.
+- **Número de dependentes:** quantos você declara para fins de Imposto de Renda. Cada dependente reduz a base do IRRF em R$ 189,59.
+
+## Exemplos práticos
+
+**1. Pró-labore de R$ 6.000, 11%, sem dependentes.** O INSS é de R$ 660 (11% × 6.000). A base do IRRF fica em R$ 5.340; o imposto pela tabela seria de cerca de R$ 559,77, e o redutor de aproximadamente R$ 179,75 reduz o IRRF para perto de **R$ 380,02**. O líquido fica em torno de **R$ 4.959,98**.
+
+**2. Pró-labore de R$ 4.000, 11%, sem dependentes.** O INSS é de R$ 440. Embora a tabela apontasse imposto, como o bruto é menor que R$ 5.000 a isenção de 2026 zera o IRRF. Sobra apenas o INSS, e o líquido é de **R$ 3.560**.
+
+**3. Pró-labore de R$ 10.000, 11%, sem dependentes.** Aqui o INSS trava no teto: o desconto é de **R$ 932,31** (e não 11% × 10.000). Acima de R$ 7.350 não há redutor, então o IRRF segue a tabela cheia e fica em torno de **R$ 1.584,88**, com líquido próximo de **R$ 7.482,81**.
+
+**4. Pró-labore de R$ 5.000, regime de 20%, sem dependentes.** Sem cota patronal, o INSS é de R$ 1.000 (20% × 5.000). Como o bruto não passa de R$ 5.000, o IRRF fica isento, e o líquido é de **R$ 4.000**.
+
+## Erros comuns
+
+- **Confundir pró-labore com distribuição de lucros.** O pró-labore remunera o trabalho do sócio e sofre INSS e IRRF; a distribuição de lucros remunera o capital e, com contabilidade regular, costuma ser isenta de Imposto de Renda e sem INSS. São coisas diferentes no holerite do sócio.
+- **Esquecer o teto do INSS.** A contribuição do sócio não cresce indefinidamente: a base do INSS para no teto de R$ 8.475,55, então o desconto máximo é de R$ 932,31 no regime de 11%.
+- **Misturar a cota patronal com o desconto do sócio.** Os 20% patronais são um custo da empresa, recolhido à parte, e não saem do valor que o sócio recebe. Esta calculadora foca só nos descontos do próprio sócio.
+- **Achar que a isenção do IR zera o INSS.** A isenção e o redutor de 2026 valem apenas para o IRRF. O INSS continua sendo descontado normalmente.
+
+## Calculadoras relacionadas
+
+- [Calculadora de Salário Líquido](/c/calculadora-salario-liquido/) — para quem é CLT de carteira assinada e quer ver todos os descontos da folha.
+- [Calculadora de IRRF](/c/calculadora-irrf/) — detalha só o Imposto de Renda retido na fonte, com base completa x simplificada.
+- [Calculadora de INSS](/c/calculadora-inss/) — a contribuição previdenciária por categoria e faixa.
+- [Calculadora do DAS do MEI](/c/calculadora-mei-das/) — para quem é microempreendedor individual e recolhe pelo DAS.
+
+## Aviso
+
+Esta é uma estimativa educativa baseada no teto do INSS e na tabela de IRRF de 2026 e pode não refletir situações específicas. A definição do valor do pró-labore, do regime de contribuição e da combinação com a distribuição de lucros deve ser feita com o seu contador, conforme a [Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026) e o [INSS](https://www.gov.br/inss/pt-br/saiba-mais).

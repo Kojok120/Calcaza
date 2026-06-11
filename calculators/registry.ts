@@ -23,6 +23,19 @@ import { entry as calculadoraFinanciamentoImovel } from './calculadora-financiam
 import { entry as calculadoraRendimentoInvestimentos } from './calculadora-rendimento-investimentos';
 import { entry as calculadoraReajusteAluguel } from './calculadora-reajuste-aluguel';
 import { entry as calculadoraMargemDeLucro } from './calculadora-margem-de-lucro';
+// Lote 2 — labor
+import { entry as calculadoraSalarioMaternidade } from './calculadora-salario-maternidade';
+import { entry as calculadoraPisPasep } from './calculadora-pis-pasep';
+import { entry as calculadoraSalarioProporcional } from './calculadora-salario-proporcional';
+// Lote 2 — impostos
+import { entry as calculadoraImpostoDeRenda } from './calculadora-imposto-de-renda';
+import { entry as calculadoraProLabore } from './calculadora-pro-labore';
+// Lote 2 — finanças
+import { entry as calculadoraFgtsSaqueAniversario } from './calculadora-fgts-saque-aniversario';
+import { entry as calculadoraJurosCartao } from './calculadora-juros-cartao';
+import { entry as calculadoraFinanciamentoVeiculo } from './calculadora-financiamento-veiculo';
+import { entry as calculadoraPoupanca } from './calculadora-poupanca';
+import { entry as calculadoraParcelamento } from './calculadora-parcelamento';
 
 export type CalculatorEntry = {
   meta: CalculatorMeta;
@@ -55,6 +68,19 @@ export const calculatorEntries: CalculatorEntry[] = [
   calculadoraRendimentoInvestimentos,
   calculadoraReajusteAluguel,
   calculadoraMargemDeLucro,
+  // Lote 2 — labor
+  calculadoraSalarioMaternidade,
+  calculadoraPisPasep,
+  calculadoraSalarioProporcional,
+  // Lote 2 — impostos
+  calculadoraImpostoDeRenda,
+  calculadoraProLabore,
+  // Lote 2 — finanças
+  calculadoraFgtsSaqueAniversario,
+  calculadoraJurosCartao,
+  calculadoraFinanciamentoVeiculo,
+  calculadoraPoupanca,
+  calculadoraParcelamento,
 ];
 
 export const calculators: CalculatorMeta[] = calculatorEntries.map((e) => e.meta);
