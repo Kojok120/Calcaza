@@ -123,6 +123,7 @@ export function RendimentoInvestimentosForm() {
                 suffix="meses"
                 decimals={0}
                 min={0}
+                max={600}
                 ariaLabel="Prazo em meses"
               />
             </Field>
@@ -199,7 +200,7 @@ export function RendimentoInvestimentosForm() {
           </div>
 
           <p className="text-xs text-ink-3">
-            Simulação aproximada e bruta de mercado. A taxa do CDB/Tesouro é
+            Simulação aproximada, baseada em taxas brutas de mercado. A taxa do CDB/Tesouro é
             informada por você e os rendimentos reais variam. Não inclui IOF
             (resgates em menos de 30 dias), a TR da poupança nem taxas de
             administração. É uma estimativa de caráter informativo, não uma

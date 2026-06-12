@@ -178,7 +178,7 @@ export function AdicionalNoturnoForm() {
           </div>
 
           <ResultStat
-            label="Só o adicional noturno (20%)"
+            label={`Só o adicional noturno (${percentualAdicional}%)`}
             value={brl.format(r.apenasAdicional)}
             emphasis={false}
             sub={<>Diferença em relação ao valor da hora diurna.</>}

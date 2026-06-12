@@ -15,12 +15,12 @@ export const meta: CalculatorMeta = {
   category: 'labor',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-06-02',
-  updatedAt: '2026-06-02',
-  reviewedAt: '2026-06-02',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'Quantos dias de aviso prévio eu tenho direito?',
-      a: 'A base é de 30 dias. Quando o empregador demite sem justa causa, soma-se 3 dias por ano completo trabalhado no mesmo empregador, até o teto de 90 dias (Lei nº 12.506/2011). Assim, com 1 ano são 33 dias; com 10 anos, 60 dias; com 20 anos ou mais, 90 dias.',
+      a: 'A base é de 30 dias. Quando o empregador demite sem justa causa, somam-se 3 dias por ano completo trabalhado no mesmo empregador, até o teto de 90 dias (Lei nº 12.506/2011). Assim, com 1 ano são 33 dias; com 10 anos, 60 dias; com 20 anos ou mais, 90 dias.',
     },
     {
       q: 'O aviso prévio proporcional vale quando eu peço demissão?',

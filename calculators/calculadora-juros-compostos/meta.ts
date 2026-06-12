@@ -16,8 +16,8 @@ export const meta: CalculatorMeta = {
   category: 'finance',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-05-19',
-  updatedAt: '2026-05-19',
-  reviewedAt: '2026-05-19',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'O que são juros compostos?',

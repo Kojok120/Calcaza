@@ -87,9 +87,9 @@ function aliquotaNominalEmpregado(salarioBruto: number): number {
   if (salarioBruto >= INSS_TETO) return INSS_BANDS[INSS_BANDS.length - 1].rate;
   let rate = INSS_BANDS[0].rate;
   for (const banda of INSS_BANDS) {
-    if (salarioBruto > 0 && salarioBruto >= banda.limit) {
+    if (salarioBruto > 0 && salarioBruto > banda.limit) {
       rate = banda.rate;
-    } else if (salarioBruto < banda.limit) {
+    } else if (salarioBruto <= banda.limit) {
       rate = banda.rate;
       break;
     }

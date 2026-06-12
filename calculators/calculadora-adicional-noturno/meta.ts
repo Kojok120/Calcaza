@@ -15,8 +15,8 @@ export const meta: CalculatorMeta = {
   category: 'labor',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-05-25',
-  updatedAt: '2026-05-25',
-  reviewedAt: '2026-05-25',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'Qual é o horário considerado trabalho noturno?',

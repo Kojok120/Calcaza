@@ -84,7 +84,7 @@ export function MargemDeLucroForm() {
 
           <Field
             id="ml-modo"
-            label="Como você raciocina o percentual?"
+            label="Você raciocina por markup ou por margem?"
             hint="Markup é sobre o custo; margem é sobre o preço de venda."
           >
             <Select

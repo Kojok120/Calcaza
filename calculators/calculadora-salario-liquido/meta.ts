@@ -15,8 +15,8 @@ export const meta: CalculatorMeta = {
   category: 'labor',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-06-05',
-  updatedAt: '2026-06-05',
-  reviewedAt: '2026-06-05',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'Qual a diferença entre salário bruto e líquido?',

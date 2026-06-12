@@ -32,7 +32,7 @@ export type Input = {
   valorImovel: number;
   /** Valor da entrada (sinal), em reais. Padrão: 0. */
   entrada?: number;
-  /** Taxa de juros nominal em % ao ano (a.a.). Padrão: 0. */
+  /** Taxa de juros efetiva em % ao ano (a.a.), convertida em taxa mensal equivalente. Padrão: 0. */
   taxaJurosAnual: number;
   /** Prazo do financiamento em meses (inteiro > 0). */
   prazoMeses: number;

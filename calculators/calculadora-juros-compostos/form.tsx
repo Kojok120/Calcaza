@@ -137,6 +137,7 @@ export function JurosCompostosForm() {
                 onChange={setPeriodo}
                 decimals={0}
                 min={0}
+                max={1200}
                 ariaLabel="Número de períodos"
               />
             </Field>

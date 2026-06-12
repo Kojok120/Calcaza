@@ -16,8 +16,8 @@ export const meta: CalculatorMeta = {
   category: 'finance',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-05-31',
-  updatedAt: '2026-05-31',
-  reviewedAt: '2026-05-31',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'Como funciona a tabela regressiva do IR em CDB e Tesouro?',

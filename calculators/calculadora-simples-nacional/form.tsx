@@ -165,6 +165,7 @@ export function SimplesNacionalForm() {
               />
             </div>
 
+            {rbt12 > 0 && (
             <div className="rounded-md border border-border-default bg-surface-1 p-4">
               <p className="text-sm font-medium text-ink-2">Como o valor sai</p>
               <p className="tabular mt-2 text-sm text-ink-2">
@@ -175,6 +176,7 @@ export function SimplesNacionalForm() {
                 </span>
               </p>
             </div>
+            )}
 
             <p className="text-xs text-ink-3">
               Estimativa do DAS do mês no Simples Nacional em 2026, com base nas

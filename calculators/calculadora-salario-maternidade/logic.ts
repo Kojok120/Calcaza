@@ -72,7 +72,7 @@ export function calculate(input: Input): Output {
         pisoAplicado: false,
       };
     }
-    const valorMensal = round2(salario);
+    const valorMensal = round2(Math.max(salario, SALARIO_MINIMO));
     return {
       valorMensal,
       valorTotal: round2(valorMensal * DURACAO_MESES),

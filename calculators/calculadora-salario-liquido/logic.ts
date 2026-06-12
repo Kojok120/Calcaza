@@ -170,7 +170,7 @@ export function calculate(input: Input): Output {
   irrf = round2(irrf);
   redutor = round2(redutor);
   const irrfAntesRedutor = round2(impostoNormal);
-  const salarioLiquido = round2(salarioBruto - inss - irrf - outrosDescontos);
+  const salarioLiquido = round2(Math.max(0, salarioBruto - inss - irrf - outrosDescontos));
 
   return {
     salarioBruto,

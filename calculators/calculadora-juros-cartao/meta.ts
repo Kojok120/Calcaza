@@ -14,8 +14,8 @@ export const meta: CalculatorMeta = {
   category: 'finance',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-06-10',
-  updatedAt: '2026-06-11',
-  reviewedAt: '2026-06-11',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'O que é o rotativo do cartão de crédito?',

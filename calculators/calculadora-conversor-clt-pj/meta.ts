@@ -4,7 +4,7 @@ export const meta: CalculatorMeta = {
   slug: 'calculadora-conversor-clt-pj',
   title: 'Calculadora de Conversão CLT x PJ 2026',
   description:
-    'Calcule de CLT para PJ: veja o pacote mensal equivalente (líquido, 13º, férias, FGTS, benefícios) e quanto faturar como PJ para igualar, com tabelas de 2026.',
+    'Converta de CLT para PJ: veja o pacote mensal equivalente (líquido, 13º, férias, FGTS, benefícios) e quanto faturar como PJ para igualar, com tabelas de 2026.',
   primaryKw: 'calculadora clt x pj',
   relatedKws: [
     'converter clt para pj',

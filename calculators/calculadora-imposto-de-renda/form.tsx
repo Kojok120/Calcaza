@@ -86,7 +86,7 @@ export function ImpostoDeRendaForm() {
           <Field
             id="ir-retido"
             label="IRRF já retido na fonte no ano"
-            hint="Imposto de Renda retido pela fonte pagadora ao longo do ano (informe do comprovante)."
+            hint="Imposto de Renda retido pela fonte pagadora ao longo do ano (veja no comprovante de rendimentos)."
           >
             <NumberInput
               id="ir-retido"

@@ -15,8 +15,8 @@ export const meta: CalculatorMeta = {
   category: 'tax',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-06-04',
-  updatedAt: '2026-06-04',
-  reviewedAt: '2026-06-04',
+  updatedAt: '2026-06-13',
+  reviewedAt: '2026-06-13',
   faqs: [
     {
       q: 'Como é calculado o desconto do INSS do empregado CLT em 2026?',
