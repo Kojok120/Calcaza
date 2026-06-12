@@ -10,14 +10,12 @@ export function SiteFooter() {
           <div>
             <Link
               href="/"
-              className="flex items-center gap-2 text-base font-semibold tracking-tight text-ink-1"
+              className="font-display flex items-center gap-2 text-base font-bold tracking-[0.08em] text-ink-1"
             >
               <span
                 aria-hidden
-                className="grid h-7 w-7 place-items-center rounded-md border border-border-default text-[14px] font-semibold text-ink-1"
-              >
-                $
-              </span>
+                className="h-1.5 w-1.5 rounded-full bg-shu"
+              />
               {SITE_NAME}
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-ink-3">

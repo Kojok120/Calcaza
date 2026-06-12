@@ -5,48 +5,56 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* === Brand (indigo / 藍) — 唯一のアクセント === */
-  --color-brand-50: oklch(96% 0.018 250);
-  --color-brand-100: oklch(92% 0.035 250);
-  --color-brand-200: oklch(86% 0.060 250);
-  --color-brand-300: oklch(78% 0.085 250);
-  --color-brand-400: oklch(68% 0.110 250);
-  --color-brand-500: oklch(58% 0.120 250);
-  --color-brand-600: oklch(48% 0.115 250);
-  --color-brand-700: oklch(38% 0.100 250);
-  --color-brand-800: oklch(30% 0.085 250);
-  --color-brand-900: oklch(22% 0.060 250);
+  /* === Brand (índigo / 藍) — acento principal === */
+  --color-brand-50: #ecf2f9;
+  --color-brand-100: #dbe6f2;
+  --color-brand-200: #b9d0e6;
+  --color-brand-300: #8fb2d7;
+  --color-brand-400: #5687bb;
+  --color-brand-500: #27619f;
+  --color-brand-600: #1d4a7e;
+  --color-brand-700: #173a63;
+  --color-brand-800: #122e4f;
+  --color-brand-900: #0c1f36;
+
+  /* === Vermelhão (朱) — reservado ao carimbo, ao total de descontos e ao marcador "A" === */
+  --color-shu: #c83a2b;
+  --color-shu-deep: #a92e21;
 
   /* === Semantic === */
-  --color-success-500: oklch(62% 0.140 145);
-  --color-warning-500: oklch(72% 0.140 80);
-  --color-danger-500: oklch(58% 0.180 25);
+  --color-success-500: #2e9e63;
+  --color-warning-500: #b5801f;
+  --color-danger-500: #c83a2b;
 
-  /* === Surface === */
-  --color-surface-0: oklch(100% 0 0);
-  --color-surface-1: oklch(98.5% 0.003 250);
-  --color-surface-2: oklch(96.5% 0.005 250);
-  --color-surface-3: oklch(94% 0.008 250);
+  /* === Surface (papel — off-white quente) === */
+  --color-surface-0: #faf8f2;
+  --color-surface-1: #f4f0e6;
+  --color-surface-2: #ece7d9;
+  --color-surface-3: #e3ddcb;
 
-  /* === Ink (text) === */
-  --color-ink-1: oklch(20% 0.015 250);
-  --color-ink-2: oklch(40% 0.018 250);
-  --color-ink-3: oklch(58% 0.014 250);
-  --color-ink-4: oklch(72% 0.010 250);
+  /* === Field (branco dos campos e do detalhamento) === */
+  --color-field: #ffffff;
 
-  /* === Border === */
-  --color-border-subtle: oklch(94% 0.005 250);
-  --color-border-default: oklch(88% 0.008 250);
-  --color-border-strong: oklch(72% 0.014 250);
+  /* === Ink (tinta) === */
+  --color-ink-1: #1f242e;
+  --color-ink-2: #4a5160;
+  --color-ink-3: #7d8494;
+  --color-ink-4: #a3a8b4;
+
+  /* === Border (pautas) === */
+  --color-border-subtle: #e8e2d2;
+  --color-border-default: #ddd6c4;
+  --color-border-strong: #c9c0a9;
 
   /* === Fonts === */
   --font-sans:
     var(--font-inter), "Inter var", "Inter", -apple-system, BlinkMacSystemFont,
     "Segoe UI", system-ui, sans-serif;
   --font-numeric:
-    "Inter var", "Inter", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    var(--font-inter), "Inter var", "Inter", "SF Pro Display", "Helvetica Neue",
+    Arial, sans-serif;
   --font-display:
-    var(--font-inter), "Inter var", "Inter", system-ui, sans-serif;
+    var(--font-ibm-plex), "IBM Plex Sans", "Inter", system-ui, sans-serif;
 
   /* === Type scale (mobile-first, 16px base) === */
   --text-2xs: 0.6875rem; /* 11px */
@@ -69,31 +77,48 @@
   /* === Spacing (8pt grid extras) === */
   --spacing-14: 3.5rem;
 
-  /* === Radius (上限 8px) === */
+  /* === Radius (livro-caixa: campos 10px / cartão da calculadora 14px) === */
   --radius-sm: 0.25rem; /* 4px */
-  --radius-md: 0.5rem; /* 8px */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 0.875rem; /* 14px */
 
   /* === Motion === */
   --duration-fast: 150ms;
   --duration-normal: 200ms;
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-ledger: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .dark {
-  --color-surface-0: oklch(16% 0.012 250);
-  --color-surface-1: oklch(20% 0.014 250);
-  --color-surface-2: oklch(24% 0.014 250);
-  --color-surface-3: oklch(28% 0.014 250);
-  --color-ink-1: oklch(96% 0.005 250);
-  --color-ink-2: oklch(82% 0.012 250);
-  --color-ink-3: oklch(65% 0.015 250);
-  --color-ink-4: oklch(50% 0.014 250);
-  --color-border-subtle: oklch(28% 0.012 250);
-  --color-border-default: oklch(36% 0.014 250);
-  --color-border-strong: oklch(50% 0.020 250);
-  --color-brand-500: oklch(70% 0.120 250);
-  --color-brand-600: oklch(60% 0.120 250);
+  /* Papel índigo-escuro com texto cor de papel */
+  --color-surface-0: #141a26;
+  --color-surface-1: #1a2333;
+  --color-surface-2: #232e42;
+  --color-surface-3: #2c3950;
+  --color-field: #1c2536;
+  --color-ink-1: #f2eee2;
+  --color-ink-2: #c9c4b4;
+  --color-ink-3: #98948a;
+  --color-ink-4: #6e6f76;
+  --color-border-subtle: #232c3e;
+  --color-border-default: #2e394f;
+  --color-border-strong: #475571;
+  --color-brand-50: #1b2a40;
+  --color-brand-100: #2a3f5e;
+  --color-brand-200: #2c4263;
+  --color-brand-300: #3a5a85;
+  --color-brand-400: #5079ab;
+  --color-brand-500: #7da3cf;
+  --color-brand-600: #94b5da;
+  --color-brand-700: #b3cce8;
+  --color-brand-800: #cfdff2;
+  --color-brand-900: #e8f0f9;
+  --color-shu: #e25f4f;
+  --color-shu-deep: #ef8273;
+  --color-success-500: #46b87e;
+  --color-warning-500: #d9a13e;
+  --color-danger-500: #e25f4f;
 }
 
 @layer base {
@@ -105,10 +130,24 @@
     font-family: var(--font-sans);
     line-height: var(--leading-normal);
     color: var(--color-ink-1);
-    background: var(--color-surface-0);
+    background-color: var(--color-surface-0);
+    /* Grão de papel */
+    background-image:
+      radial-gradient(at 85% -10%, rgb(39 97 159 / 0.05), transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     overflow-wrap: anywhere;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(at 85% -10%, rgb(125 163 207 / 0.07), transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 .03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background: var(--color-brand-100);
   }
 
   h1,
@@ -139,6 +178,19 @@
   }
 }
 
+/* Pulso do indicador "Cálculo na hora" */
+@keyframes kz-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(46 158 99 / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgb(46 158 99 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(46 158 99 / 0);
+  }
+}
+
 @layer utilities {
   .tabular {
     font-variant-numeric: tabular-nums lining-nums;
@@ -146,7 +198,70 @@
     font-family: var(--font-numeric);
   }
 
-  .font-display {
-    font-family: var(--font-display);
+  /* Página esquerda do livro-caixa — papel pautado */
+  .bg-ledger-ruled {
+    background-color: var(--color-surface-1);
+    background-image: repeating-linear-gradient(
+      transparent 0 31px,
+      rgb(23 58 99 / 0.045) 31px 32px
+    );
+  }
+  .dark .bg-ledger-ruled {
+    background-image: repeating-linear-gradient(
+      transparent 0 31px,
+      rgb(190 210 240 / 0.05) 31px 32px
+    );
+  }
+
+  /* Toque sutil de índigo na faixa de cabeçalho da calculadora */
+  .head-band {
+    background-image: linear-gradient(
+      to right,
+      var(--color-brand-50),
+      transparent 70%
+    );
+  }
+
+  /* Linha pontilhada entre rótulo e valor no detalhamento */
+  .dotted-leader {
+    flex: 1 1 1rem;
+    min-width: 1rem;
+    border-bottom: 2px dotted var(--color-border-strong);
+    transform: translateY(-4px);
+  }
+
+  /* Textura desgastada do carimbo */
+  .hanko-stamp {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .92 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .92 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E");
+  }
+
+  /* Ponto "ao vivo" do cálculo instantâneo */
+  .live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: var(--color-success-500);
+    animation: kz-pulse 2.4s infinite;
+  }
+
+  /* Sombra do cartão da calculadora (única sombra permitida) */
+  .shadow-ledger {
+    box-shadow:
+      0 1px 2px rgb(31 36 46 / 0.04),
+      0 12px 40px -18px rgb(23 58 99 / 0.18);
+  }
+  .dark .shadow-ledger {
+    box-shadow:
+      0 1px 2px rgb(0 0 0 / 0.3),
+      0 12px 40px -18px rgb(0 0 0 / 0.5);
+  }
+
+  /* Acento estilo marca-texto no H1 */
+  .marker-accent {
+    background-image: linear-gradient(
+      transparent 70%,
+      var(--color-brand-100) 70%
+    );
   }
 }

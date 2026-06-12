@@ -181,15 +181,16 @@ export function NumberInput({
     <div className={cn('relative', className)}>
       <div
         className={cn(
-          'flex items-stretch overflow-hidden rounded-md border bg-surface-1 transition-colors',
-          'focus-within:ring-2 focus-within:ring-brand-500',
+          'flex items-stretch overflow-hidden rounded-md border-[1.5px] bg-field',
+          'transition-[border-color,box-shadow] duration-150',
+          'focus-within:ring-[3px] focus-within:ring-brand-100',
           invalid
             ? 'border-danger-500'
-            : 'border-border-default focus-within:border-brand-500'
+            : 'border-border-strong focus-within:border-brand-500'
         )}
       >
         {hasPrefix && (
-          <span className="grid place-items-center bg-surface-2 px-3 text-sm text-ink-3">
+          <span className="grid place-items-center pl-3.5 text-sm text-ink-3">
             {prefix}
           </span>
         )}
@@ -210,11 +211,12 @@ export function NumberInput({
           aria-invalid={invalid || undefined}
           aria-describedby={invalid && errorId ? errorId : undefined}
           className={cn(
-            'tabular block h-14 w-full min-w-0 border-0 bg-transparent px-4 text-base text-ink-1 outline-none'
+            'tabular block h-14 w-full min-w-0 border-0 bg-transparent px-4 text-lg font-semibold text-ink-1 outline-none',
+            'placeholder:font-normal placeholder:text-ink-4'
           )}
         />
         {hasSuffix && (
-          <span className="grid place-items-center bg-surface-2 px-3 text-sm text-ink-3">
+          <span className="grid place-items-center pr-3.5 text-sm text-ink-3">
             {trailing}
           </span>
         )}

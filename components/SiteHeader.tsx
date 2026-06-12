@@ -1,58 +1,39 @@
 import Link from 'next/link';
 import { SITE_NAME } from '@/lib/site';
 
+const NAV_ITEMS = [
+  { href: '/blog/', label: 'Guias' },
+  { href: '/methodology/', label: 'Metodologia' },
+  { href: '/about/', label: 'Sobre' },
+  { href: '/disclaimer/', label: 'Aviso legal' },
+];
+
 export function SiteHeader() {
   return (
-    <header className="border-b border-border-default bg-surface-0">
+    <header className="sticky top-0 z-50 border-b border-border-default bg-surface-0/90 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:h-16">
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-ink-1"
+          className="font-display flex items-center gap-2.5 text-xl font-bold tracking-[0.08em] text-ink-1 sm:text-[1.375rem]"
         >
           <span
             aria-hidden
-            className="font-display grid h-9 w-9 place-items-center rounded-md border border-border-default text-[15px] font-bold text-ink-1"
-          >
-            $
-          </span>
-          <span className="font-display text-2xl font-bold tracking-[0.02em] sm:text-[1.625rem]">
-            {SITE_NAME}
-          </span>
+            className="h-2 w-2 -translate-y-px rounded-full bg-shu"
+          />
+          {SITE_NAME}
         </Link>
         <nav aria-label="Navegação principal">
-          <ul className="flex items-center gap-1 text-sm text-ink-2">
-            <li>
-              <Link
-                href="/blog/"
-                className="rounded-md px-3 py-1.5 transition-colors hover:bg-surface-2 hover:text-ink-1"
-              >
-                Guias
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/methodology/"
-                className="rounded-md px-3 py-1.5 transition-colors hover:bg-surface-2 hover:text-ink-1"
-              >
-                Metodologia
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about/"
-                className="rounded-md px-3 py-1.5 transition-colors hover:bg-surface-2 hover:text-ink-1"
-              >
-                Sobre
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/disclaimer/"
-                className="rounded-md px-3 py-1.5 transition-colors hover:bg-surface-2 hover:text-ink-1"
-              >
-                Aviso legal
-              </Link>
-            </li>
+          <ul className="flex items-center gap-0.5 text-[0.8125rem] tracking-[0.04em] text-ink-2 sm:gap-1.5">
+            {NAV_ITEMS.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="rounded-md px-2.5 py-1.5 transition-colors hover:text-brand-600 sm:px-3"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

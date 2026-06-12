@@ -41,9 +41,9 @@ export function Select({
         id={id}
         aria-label={ariaLabel}
         className={cn(
-          'inline-flex h-14 w-full items-center justify-between gap-2 rounded-md border border-border-default bg-surface-1 px-4 text-base',
-          'outline-none transition-colors',
-          'focus:ring-2 focus:ring-brand-500 focus:border-brand-500',
+          'inline-flex h-14 w-full items-center justify-between gap-2 rounded-md border-[1.5px] border-border-strong bg-field px-4 text-base text-ink-1',
+          'outline-none transition-[border-color,box-shadow] duration-150',
+          'focus:border-brand-500 focus:ring-[3px] focus:ring-brand-100',
           className
         )}
       >
@@ -57,7 +57,8 @@ export function Select({
           position="popper"
           sideOffset={4}
           className={cn(
-            'z-50 overflow-hidden rounded-md border border-border-default bg-surface-0',
+            'z-50 overflow-hidden rounded-md border border-border-default bg-field',
+            'shadow-[0_8px_24px_-12px_rgb(23_58_99/0.25)]',
             'min-w-[var(--radix-select-trigger-width)]'
           )}
         >

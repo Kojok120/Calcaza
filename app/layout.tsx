@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { IBM_Plex_Sans, Inter } from 'next/font/google';
 import {
   ADSENSE_CLIENT,
   CLOUDFLARE_ANALYTICS_TOKEN,
@@ -22,6 +22,14 @@ const inter = Inter({
   display: 'swap',
 });
 
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-ibm-plex',
+  display: 'swap',
+  preload: true,
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -42,8 +50,8 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f1622' },
+    { media: '(prefers-color-scheme: light)', color: '#faf8f2' },
+    { media: '(prefers-color-scheme: dark)', color: '#141a26' },
   ],
 };
 
@@ -69,7 +77,7 @@ export default function RootLayout({
     <html
       lang={SITE_LANG}
       dir={SITE_DIR}
-      className={inter.variable}
+      className={`${inter.variable} ${ibmPlexSans.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
