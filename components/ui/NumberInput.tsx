@@ -81,7 +81,8 @@ function applyDecimals(n: number, decimals: number | undefined): number {
 function rawString(value: number, decimals: number | undefined): string {
   if (!Number.isFinite(value)) return '';
   const v = applyDecimals(value, decimals);
-  return decimals === 0 ? String(Math.trunc(v)) : String(v);
+  const s = decimals === 0 ? String(Math.trunc(v)) : String(v);
+  return decimalChar === '.' ? s : s.replace('.', decimalChar);
 }
 
 export function NumberInput({
@@ -152,7 +153,8 @@ export function NumberInput({
     const normalized = normalizeDigits(raw);
     let cleaned = normalized.replace(/[^\d.,\-]/g, '');
     if (!allowNegative) cleaned = cleaned.replace(/-/g, '');
-    if (isIntegerMode) cleaned = cleaned.replace(/[.,]/g, '');
+    if (isIntegerMode)
+      cleaned = cleaned.replace(groupRe, '').split(decimalChar)[0];
     setDraft(cleaned);
 
     const parsed = parseLocaleNumber(cleaned, allowNegative);

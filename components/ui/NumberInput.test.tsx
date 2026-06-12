@@ -238,6 +238,94 @@ describe('NumberInput', () => {
     expect(input.value).toBe('9,88');
   });
 
+  it('shows the locale decimal separator in the raw edit value on focus (pt-BR comma)', () => {
+    render(<Harness initial={14.5} decimals={2} ariaLabel="rate" />);
+    const input = screen.getByLabelText('rate') as HTMLInputElement;
+    fireEvent.focus(input);
+    // pt-BR: the editable raw string must use a comma, never a JS-style period,
+    // otherwise the blur re-parse strips it as a group separator (14.5 -> 145).
+    expect(input.value).toBe('14,5');
+  });
+
+  it('keeps the value stable across an untouched focus/blur cycle (decimal value)', () => {
+    const onChange = vi.fn();
+    render(
+      <Harness initial={14.5} onChange={onChange} decimals={2} ariaLabel="rate" />
+    );
+    const input = screen.getByLabelText('rate') as HTMLInputElement;
+    fireEvent.focus(input);
+    fireEvent.blur(input);
+    expect(onChange).toHaveBeenLastCalledWith(14.5);
+    expect(input.value).toBe('14,5');
+  });
+
+  it('keeps a small fractional value stable across focus/blur (0.17 with 4 decimals)', () => {
+    const onChange = vi.fn();
+    render(
+      <Harness initial={0.17} onChange={onChange} decimals={4} ariaLabel="tr" />
+    );
+    const input = screen.getByLabelText('tr') as HTMLInputElement;
+    fireEvent.focus(input);
+    expect(input.value).toBe('0,17');
+    fireEvent.blur(input);
+    expect(onChange).toHaveBeenLastCalledWith(0.17);
+  });
+
+  it('keeps a large decimal value stable across focus/blur (1234567.89)', () => {
+    const onChange = vi.fn();
+    render(
+      <Harness
+        initial={1234567.89}
+        onChange={onChange}
+        decimals={2}
+        ariaLabel="amount"
+      />
+    );
+    const input = screen.getByLabelText('amount') as HTMLInputElement;
+    fireEvent.focus(input);
+    expect(input.value).toBe('1234567,89');
+    fireEvent.blur(input);
+    expect(onChange).toHaveBeenLastCalledWith(1234567.89);
+    expect(input.value).toBe('1.234.567,89');
+  });
+
+  it('truncates at the decimal comma in integer mode instead of concatenating digits', () => {
+    const onChange = vi.fn();
+    render(
+      <Harness initial={0} onChange={onChange} decimals={0} ariaLabel="deps" />
+    );
+    const input = screen.getByLabelText('deps') as HTMLInputElement;
+    fireEvent.focus(input);
+    // pt-BR: comma is the decimal separator. "1,5" must become 1, not 15.
+    fireEvent.change(input, { target: { value: '1,5' } });
+    expect(input.value).toBe('1');
+    expect(onChange).toHaveBeenLastCalledWith(1);
+  });
+
+  it('handles a thousands-separated decimal paste in integer mode (1.234,56 -> 1234)', () => {
+    const onChange = vi.fn();
+    render(
+      <Harness initial={0} onChange={onChange} decimals={0} ariaLabel="months" />
+    );
+    const input = screen.getByLabelText('months') as HTMLInputElement;
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: '1.234,56' } });
+    expect(input.value).toBe('1234');
+    expect(onChange).toHaveBeenLastCalledWith(1234);
+  });
+
+  it('keeps stripping group separators in integer mode (1.234 -> 1234)', () => {
+    const onChange = vi.fn();
+    render(
+      <Harness initial={0} onChange={onChange} decimals={0} ariaLabel="months" />
+    );
+    const input = screen.getByLabelText('months') as HTMLInputElement;
+    fireEvent.focus(input);
+    fireEvent.change(input, { target: { value: '1.234' } });
+    expect(input.value).toBe('1234');
+    expect(onChange).toHaveBeenLastCalledWith(1234);
+  });
+
   it('falls back to last valid value when blurred with empty input', () => {
     const onChange = vi.fn();
     render(
