@@ -1,0 +1,5 @@
+# Canonical host enforcement (Cloudflare Pages).
+# 301 www -> apex so search engines consolidate duplicate indexing onto a
+# single host. The <link rel="canonical"> tags already point to the apex;
+# this makes it a hard redirect rather than a hint.
+https://www.calcaza.com/* https://calcaza.com/:splat 301
