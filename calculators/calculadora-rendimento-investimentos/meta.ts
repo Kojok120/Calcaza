@@ -16,7 +16,7 @@ export const meta: CalculatorMeta = {
   category: 'finance',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-05-31',
-  updatedAt: '2026-06-13',
+  updatedAt: '2026-07-03',
   reviewedAt: '2026-06-13',
   faqs: [
     {

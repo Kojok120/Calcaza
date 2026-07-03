@@ -15,7 +15,7 @@ export const meta: CalculatorMeta = {
   category: 'labor',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-05-26',
-  updatedAt: '2026-05-26',
+  updatedAt: '2026-07-03',
   reviewedAt: '2026-05-26',
   faqs: [
     {
