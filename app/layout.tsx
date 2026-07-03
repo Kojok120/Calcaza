@@ -80,6 +80,11 @@ export default function RootLayout({
       className={`${inter.variable} ${ibmPlexSans.variable}`}
     >
       <head>
+        {/* impact.com verificação de propriedade do site (atributo value= exigido, via spread) */}
+        <meta
+          name="impact-site-verification"
+          {...{ value: 'c056d0b4-f170-4c34-946a-55185c48351f' }}
+        />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {!isPlaceholderAdsense && (
           <script
