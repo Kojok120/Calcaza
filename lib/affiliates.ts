@@ -78,6 +78,14 @@ export const AFFILIATE_OFFERS: Record<string, AffiliateOffer> = {
     cta: 'Abrir conta',
     url: '', // TODO: cole sua URL de afiliado (conta digital/fintech)
   },
+  remittance: {
+    network: 'wise-partnerize',
+    label: 'Envie dinheiro ao exterior com a taxa real',
+    description:
+      'Transferências internacionais com o câmbio comercial e tarifas transparentes; compare o VET com o do seu banco antes de enviar.',
+    cta: 'Ver a Wise',
+    url: 'https://wise.prf.hn/click/camref:1110lHu3z', // Partnerize (payout JPY) — SubID via prf.hn path pubref:
+  },
 };
 
 /**
@@ -99,6 +107,10 @@ export function offerUrlWithSubId(offer: AffiliateOffer, slug: string): string {
   if (!offer.url) return offer.url;
   const param = offer.subIdParam === undefined ? 'subid' : offer.subIdParam;
   if (!param || !slug) return offer.url;
+  // Partnerize (prf.hn): o SubID vai como segmento de caminho `pubref:`, não query param.
+  if (offer.url.includes('prf.hn')) {
+    return `${offer.url.replace(/\/+$/, '')}/pubref:${encodeURIComponent(slug)}`;
+  }
   const sep = offer.url.includes('?') ? '&' : '?';
   return `${offer.url}${sep}${param}=${encodeURIComponent(slug)}`;
 }

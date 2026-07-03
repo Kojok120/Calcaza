@@ -70,6 +70,7 @@
 - Magazine Luiza（Parceiro Magalu）/ Mercado Livre Afiliados — 物販
 - Contabilizei / contabilidade online — MEI/PJ 会計（高 CPA）
 - Nubank / fintech CPA（cartão / conta） — 金融
+- Wise（Partnerize CPA、承認済 2026-07-03、payout JPY、伯は Wise プロモ国） — 国際送金。calc タグ `remittance` / `wise-partnerize`
 
 ## AdSense 市場
 - 入札市場: Google.com.br（ブラジル）

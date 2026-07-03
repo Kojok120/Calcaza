@@ -1,0 +1,71 @@
+## Resposta direta
+
+O custo real de enviar dinheiro ao exterior não é só a tarifa: ele soma **cotação + spread + tarifas + IOF**, e o total forma o **Valor Efetivo Total (VET)**. Esta calculadora **não busca cotação ao vivo** — você informa os números do seu caso (cotação comercial, cotação do provedor, tarifa e alíquota de IOF) e ela mostra quanto de fato sai da sua conta e quanto chega ao destino. Assim dá para comparar banco, fintech e corretora na mesma régua.
+
+| Componente | O que é | Entra no VET? |
+| --- | --- | --- |
+| Cotação comercial | Cotação de referência (base do câmbio) | É a base de comparação |
+| Spread | Diferença entre a cotação comercial e a do provedor | Sim — costuma ser o maior |
+| Tarifa fixa | Valor cobrado pela operação | Sim |
+| IOF | Imposto sobre a operação de câmbio (varia por decreto) | Sim |
+
+> Os valores usados nos exemplos abaixo são **ilustrativos**, apenas para explicar o método. Confirme a alíquota de IOF vigente na Receita Federal e as cotações reais com o seu provedor.
+
+## O que esta calculadora faz
+
+Ela decompõe o custo de uma **remessa internacional** em partes visíveis. A partir do valor que você quer enviar, da cotação comercial de referência, da cotação que o provedor oferece, da tarifa e da alíquota de IOF, a ferramenta calcula:
+
+- o **custo do câmbio (spread)** em reais;
+- o **IOF** sobre a operação;
+- as **tarifas e encargos** fixos;
+- o **VET** (a soma de tudo) e quanto isso representa em **% do valor enviado**;
+- a **cotação efetiva** final (quanto cada unidade da moeda te custou de verdade);
+- o **valor que chega** ao destino, na moeda estrangeira.
+
+O objetivo é ser uma ferramenta de **comparação e transparência**, e não um conversor de moedas. Sites de cotação já mostram o câmbio do minuto; o que costuma faltar é enxergar quanto some pelo caminho entre o valor que sai e o que chega.
+
+## Por que o spread costuma ser o maior custo
+
+Muita gente compara remessas olhando só a **tarifa**. O problema é que o item mais pesado costuma ser o **spread** — a diferença entre a cotação comercial e a cotação que o provedor coloca na sua operação. Um provedor pode anunciar "sem tarifa" e, ainda assim, sair mais caro, porque embute o custo em uma cotação pior. Como o spread é um percentual do valor, ele cresce junto com a remessa: em transferências maiores, alguns pontos de spread pesam muito mais do que qualquer tarifa fixa. Por isso a calculadora separa o spread em uma linha própria, em reais e em porcentagem.
+
+## A fórmula e de onde vêm os números
+
+O cálculo segue quatro passos, na convenção brasileira de **R$ por 1 unidade da moeda** (ex.: R$ 5,00 por US$ 1):
+
+1. **Spread** = 1 − (cotação comercial ÷ cotação do provedor). Custo do spread = valor enviado × spread. Se você informar o spread em % manualmente, ele tem prioridade.
+2. **IOF** = base × alíquota informada, onde a base pode ser só o valor enviado ou o valor + tarifa.
+3. **Tarifas** = tarifa fixa + outros encargos.
+4. **VET** = spread + IOF + tarifas. O **custo em %** é o VET dividido pelo valor enviado.
+
+A transparência do custo do câmbio segue o arcabouço do **Banco Central do Brasil**, que trata o [mercado de câmbio](https://www.bcb.gov.br/estabilidadefinanceira/mercadocambio) e a divulgação do custo ao cliente, e o novo marco cambial da [Lei nº 14.286/2021](https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14286.htm). O **IOF** sobre câmbio é regido pelo [Decreto nº 6.306/2007](https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6306.htm) e pela [Receita Federal](https://www.gov.br/receitafederal); a alíquota depende do tipo de operação e da titularidade, e **muda por decreto** — por isso você informa a vigente, em vez de a calculadora fixar um número.
+
+## Como preencher os campos
+
+- **Valor a enviar**: quanto sai da sua conta, em R$.
+- **Cotação comercial**: a cotação de referência, em R$ por unidade da moeda.
+- **Cotação do provedor**: a cotação que o banco ou fintech de fato aplica.
+- **Spread manual (opcional)**: use se já conhece o spread em %.
+- **Tarifa e outros encargos**: valores fixos da operação.
+- **Alíquota de IOF e base**: o percentual vigente e se ele incide só sobre o valor ou sobre valor + tarifa.
+
+## Exemplos práticos
+
+**1. Banco tradicional (spread alto).** Você envia R$ 5.000 com cotação comercial de R$ 5,00 e cotação do provedor de R$ 5,30 (spread de 5,66%), tarifa de R$ 30 e IOF de 1,1% sobre o valor. O custo do câmbio é de R$ 283,02, o IOF de R$ 55,00 e a tarifa de R$ 30,00 — um VET de **R$ 368,02**, ou **7,36%** do valor enviado. Chegam cerca de **US$ 926,40** ao destino.
+
+**2. Fintech (spread baixo).** A mesma remessa de R$ 5.000, mas com cotação do provedor de R$ 5,07 (spread de 1,38%) e tarifa de R$ 12. O custo do câmbio cai para R$ 69,03, o IOF continua em R$ 55,00 e a tarifa em R$ 12,00 — um VET de **R$ 136,03**, ou **2,72%**. Chegam cerca de **US$ 972,79**. A diferença para o exemplo 1 passa de **R$ 230** em custo, e o recebedor fica com quase **US$ 46 a mais** — quase tudo por causa do spread.
+
+**3. Remessa maior, IOF sobre valor + tarifa.** Você envia R$ 20.000 com cotação do provedor de R$ 5,35 (spread de 6,54%), tarifa de R$ 40 e IOF de 1,1% sobre valor + tarifa. O câmbio custa R$ 1.308,41, o IOF R$ 220,44 e a tarifa R$ 40,00 — um VET de **R$ 1.568,85**, ou **7,84%**. Aqui fica claro como, em valores altos, o spread domina o custo.
+
+## Erros comuns
+
+- **Comparar só a tarifa.** A tarifa costuma ser a menor parte; o spread quase sempre pesa mais.
+- **Confiar na cotação anunciada sem checar o spread.** Uma cotação "cheia de zeros" pode esconder uma margem alta.
+- **Achar que o valor enviado é o valor recebido.** Quem recebe fica com o que sobra depois de spread, tarifas e IOF.
+- **Supor uma alíquota fixa de IOF.** Ela varia por tipo de operação e por decreto — confira sempre a vigente.
+- **Esquecer a titularidade.** Enviar para a própria conta no exterior pode ter tratamento diferente de enviar a terceiros.
+
+## Calculadoras relacionadas
+
+Se o seu gasto no exterior é com cartão, veja como o IOF e os juros aparecem na [Calculadora de Juros do Cartão de Crédito](/c/calculadora-juros-cartao). Para quem recebe ou movimenta valores fora do país e precisa declarar, a [Calculadora de Imposto de Renda](/c/calculadora-imposto-de-renda) e a [Calculadora de IRRF](/c/calculadora-irrf) ajudam a estimar o imposto. E, ao planejar quanto sobra para investir, a [Calculadora de Rendimento de Investimentos](/c/calculadora-rendimento-investimentos) mostra o efeito dos juros a seu favor. A Calcaza cita a fonte de cada número — veja como verificamos os cálculos na página [Sobre](/about) e acompanhe os guias no [blog](/blog).
+
+> Esta é uma **estimativa educativa** do custo de uma remessa internacional, feita a partir dos valores que você informa. Ela **não é uma operação nem um fechamento de câmbio**, não busca cotação ao vivo e não substitui orientação profissional. A alíquota de IOF muda por decreto e depende do tipo de operação — confirme a vigente na Receita Federal e os valores exatos com o seu provedor antes de enviar.

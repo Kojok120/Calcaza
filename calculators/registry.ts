@@ -36,6 +36,7 @@ import { entry as calculadoraJurosCartao } from './calculadora-juros-cartao';
 import { entry as calculadoraFinanciamentoVeiculo } from './calculadora-financiamento-veiculo';
 import { entry as calculadoraPoupanca } from './calculadora-poupanca';
 import { entry as calculadoraParcelamento } from './calculadora-parcelamento';
+import { entry as calculadoraRemessaInternacional } from './calculadora-remessa-internacional';
 
 export type CalculatorEntry = {
   meta: CalculatorMeta;
@@ -81,6 +82,7 @@ export const calculatorEntries: CalculatorEntry[] = [
   calculadoraFinanciamentoVeiculo,
   calculadoraPoupanca,
   calculadoraParcelamento,
+  calculadoraRemessaInternacional,
 ];
 
 export const calculators: CalculatorMeta[] = calculatorEntries.map((e) => e.meta);
