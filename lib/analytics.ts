@@ -52,3 +52,16 @@ export function trackAffiliateClick(network: string, calculator: string): void {
   if (typeof gtag !== 'function') return;
   gtag('event', 'affiliate_click', { network, calculator });
 }
+
+/**
+ * Rastreia o compartilhamento da calculadora (WhatsApp / Facebook / copiar)
+ * como evento `share_click` no GA4. Apenas canal + slug; sem dados pessoais.
+ * No-op se o GA4 não estiver configurado.
+ */
+export function trackShareClick(channel: string, calculator: string): void {
+  if (typeof window === 'undefined') return;
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void })
+    .gtag;
+  if (typeof gtag !== 'function') return;
+  gtag('event', 'share_click', { channel, calculator });
+}

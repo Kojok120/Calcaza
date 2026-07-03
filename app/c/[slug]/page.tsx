@@ -11,6 +11,7 @@ import { DisclaimerNote } from '@/components/DisclaimerNote';
 import { Faq } from '@/components/Faq';
 import { RelatedCalcs } from '@/components/RelatedCalcs';
 import { AffiliateBlock } from '@/components/calc/AffiliateBlock';
+import { ShareBar } from '@/components/calc/ShareBar';
 import { CalcStampProvider } from '@/components/calc/calc-context';
 import { CATEGORY_ICON, CATEGORY_LABEL } from '@/lib/icons';
 import { SITE_INTL_LOCALE } from '@/lib/site';
@@ -176,6 +177,8 @@ export default async function CalculatorPage({
         <CalcStampProvider stamp={fmtStamp(reviewedAt)}>
           <Form />
         </CalcStampProvider>
+
+        <ShareBar slug={meta.slug} title={meta.title} />
 
         <div className="prose prose-base mt-10 max-w-none text-ink-1 marker:text-brand-500 prose-headings:tracking-tight prose-headings:text-ink-1 prose-h2:font-display prose-h2:mt-12 prose-h2:border-l-4 prose-h2:border-brand-600 prose-h2:pl-3.5 prose-h2:text-2xl prose-h2:font-bold prose-h2:leading-snug prose-h3:font-display prose-h3:mt-8 prose-h3:text-lg prose-a:text-brand-700 prose-a:underline prose-a:underline-offset-2 prose-a:decoration-1 prose-strong:text-ink-1 prose-li:my-1">
           <Content />
