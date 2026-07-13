@@ -1,0 +1,82 @@
+## Resumo
+
+O rendimento da caderneta de poupança não é decidido pelo banco: ele é fixado em lei e é **igual em qualquer instituição**. Pela [Lei nº 12.703/2012](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12703.htm), enquanto a taxa Selic estiver **acima de 8,5% ao ano**, a poupança rende **0,5% ao mês mais a TR** (Taxa Referencial). Como a Selic estava em **14,25% ao ano** em julho de 2026 — definida pelo Copom na reunião de 17/06/2026, conforme o [Banco Central](https://www.bcb.gov.br/controleinflacao/historicotaxasjuros) —, é essa a regra em vigor. Com a TR de julho em torno de 0,17% ao mês, o rendimento do mês ficou em **aproximadamente 0,67%**.
+
+Este guia explica os dois regimes da lei, o papel da TR, a famosa "data de aniversário", a isenção de Imposto de Renda e faz as contas de quanto o dinheiro acumula em cenários reais. Taxas conferidas nas fontes oficiais em 13/07/2026 — a TR muda mensalmente e a Selic pode mudar a cada reunião do Copom (a próxima está marcada para 05/08/2026).
+
+## A regra de rendimento: dois regimes definidos em lei
+
+Desde 04/05/2012, os depósitos em poupança seguem a regra da Lei nº 12.703/2012, operacionalizada pelo [Banco Central](https://www4.bcb.gov.br/pec/poupanca/poupanca.asp):
+
+- **Selic acima de 8,5% ao ano** → poupança rende **0,5% ao mês + TR**.
+- **Selic igual ou abaixo de 8,5% ao ano** → poupança rende **70% da Selic (em base mensal) + TR**.
+
+O objetivo do segundo regime é impedir que a poupança pague mais do que títulos públicos em ciclos de juros baixos. Em 2026, com a Selic em dois dígitos, vale o primeiro regime — e é por isso que o retorno "cheio" de 0,5% + TR aparece nos extratos. Depósitos feitos **antes de 04/05/2012** (a chamada "poupança antiga") continuam rendendo 0,5% + TR para sempre, independentemente da Selic.
+
+Para simular o acumulado com aportes mensais nas regras atuais, use a [calculadora de poupança](/c/calculadora-poupanca/).
+
+## O que é a TR e onde consultar
+
+A TR (Taxa Referencial) é calculada e divulgada diariamente pelo Banco Central a partir das taxas das LTNs (títulos públicos prefixados). Ela passou anos em zero — entre 2017 e o fim de 2021 a poupança rendeu só os 0,5% — e voltou a ficar positiva com o ciclo de juros altos. Em julho de 2026, a TR mensal estava em torno de **0,17% ao mês**, o que leva o rendimento da poupança a cerca de **0,67% ao mês**.
+
+Dois cuidados ao usar esse número:
+
+- A TR **varia mês a mês**; o 0,17% vale para a data de verificação deste guia (13/07/2026) e deve ser conferido na série oficial do [BCB](https://www.bcb.gov.br/) antes de qualquer decisão.
+- O rendimento divulgado "no aniversário" usa a TR do período correspondente, não a do dia da consulta.
+
+## A data de aniversário: quando o rendimento cai na conta
+
+A poupança **não rende diariamente para fins de crédito**: o rendimento é creditado uma vez por mês, na **data de aniversário** do depósito — o dia do mês em que o dinheiro entrou. Um depósito feito no dia 10 rende a cada dia 10; se você sacar no dia 9, perde o rendimento do período inteiro desde o último aniversário.
+
+Regras práticas:
+
+- Depósitos feitos nos dias **29, 30 e 31** têm aniversário no dia **1º** do mês seguinte.
+- Cada depósito tem o próprio aniversário; uma conta com aportes em datas diferentes tem vários "aniversários" rodando em paralelo.
+- Para resgates programados, vale sacar **no dia do aniversário ou logo depois**, nunca na véspera.
+
+Um exemplo do custo de errar a data: R$ 20.000 depositados no dia 10, sacados no dia 8 do mês seguinte, rendem **zero** — o saque veio antes do aniversário. Se o saque esperasse até o dia 10, o crédito do mês, à taxa de julho de 2026, seria de aproximadamente **R$ 134** (20.000 × 0,67%). Dois dias de pressa custariam o rendimento do mês inteiro.
+
+## Por que a poupança não paga Imposto de Renda
+
+Os rendimentos da caderneta são **isentos de IR para pessoa física** por força do art. 68, inciso III, da [Lei nº 8.981/1995](https://www.planalto.gov.br/ccivil_03/leis/l8981.htm). Não há também cobrança de IOF sobre os rendimentos, nem taxa de administração ou de custódia. Essa é a grande vantagem comparativa da poupança: o percentual que aparece no extrato é líquido de verdade.
+
+Atenção a um detalhe da declaração anual: isento não significa invisível. O saldo entra na ficha de bens e os rendimentos vão em "Rendimentos Isentos e Não Tributáveis" na declaração do IRPF de quem é obrigado a declarar.
+
+## Exemplos práticos
+
+### Exemplo 1 — R$ 10.000,00 parados por 12 meses
+
+Mantendo a taxa de julho de 2026 (0,5% + TR ≈ 0,67% ao mês) constante por hipótese, o montante após 12 aniversários seria de 10.000 × (1,0067)¹² ≈ **R$ 10.834**, um rendimento aproximado de **R$ 834** — livre de IR. Na prática o número final varia com a TR de cada mês; a hipótese de TR constante serve apenas para dimensionar a ordem de grandeza.
+
+### Exemplo 2 — R$ 500,00 iniciais + R$ 300,00 por mês durante 2 anos
+
+Com aportes mensais de R$ 300 e a mesma taxa de 0,67% ao mês, o acumulado em 24 meses fica por volta de **R$ 8.370**: R$ 7.700 depositados e cerca de **R$ 670** de rendimento. O efeito dos juros compostos ainda é pequeno em prazos curtos, mas acelera com o tempo — a [calculadora de juros compostos](/c/calculadora-juros-compostos/) mostra a curva completa para qualquer combinação de aporte e prazo.
+
+### Exemplo 3 — e se a Selic cair abaixo de 8,5%?
+
+Num cenário hipotético de Selic a 8% ao ano, a poupança passaria ao segundo regime: 70% × 8% ÷ 12 ≈ 0,467% ao mês + TR (e a TR tende a zero com juros baixos). Os mesmos R$ 10.000 do exemplo 1 renderiam cerca de R$ 573 no ano, em vez de R$ 834. É a razão de a poupança "piorar" automaticamente em ciclos de corte agressivo de juros.
+
+## A poupança vale a pena em 2026?
+
+Depende do objetivo. A favor: isenção total de IR, liquidez imediata, proteção do Fundo Garantidor de Créditos (FGC) até R$ 250 mil por CPF e por instituição — a mesma garantia que cobre CDBs — e simplicidade: não há emissão de nota nem apuração de imposto. Contra: com a Selic em 14,25% ao ano, aplicações atreladas ao CDI (Tesouro Selic, CDBs de grandes bancos) tendem a render **mais que a poupança mesmo depois de descontado o IR** para a maior parte dos prazos. O rendimento de ~0,67% ao mês também pode ficar abaixo da inflação em alguns períodos, ou seja, o ganho real não é garantido.
+
+Um comparativo aproximado ajuda a dimensionar: os mesmos R$ 10.000 do exemplo 1, aplicados por 12 meses a uma taxa próxima do CDI (na casa de 14% ao ano em julho de 2026), renderiam algo em torno de R$ 1.400 brutos; descontado o IR de renda fixa (20% para aplicações de 361 dias, 17,5% acima de 720 dias), sobrariam **aproximadamente R$ 1.120 a R$ 1.160 líquidos — contra cerca de R$ 834 na poupança**. A vantagem se inverte apenas em produtos com taxa de administração alta ou em resgates muito curtos, quando IOF regressivo e alíquotas maiores de IR corroem o ganho da alternativa.
+
+Uma comparação honesta exige colocar as alternativas na mesma régua — taxa líquida de impostos e taxas administrativas, no mesmo prazo. A [calculadora de rendimento de investimentos](/c/calculadora-rendimento-investimentos/) ajuda a fazer exatamente essa comparação antes de decidir onde deixar a reserva. E vale separar as funções do dinheiro: para a reserva de emergência, liquidez e segurança pesam mais do que meio ponto de rentabilidade; para objetivos de longo prazo, a diferença de taxa composta ao longo de anos se torna expressiva.
+
+## Erros comuns
+
+- **Sacar na véspera do aniversário.** Perde-se o rendimento do mês inteiro daquele depósito.
+- **Achar que banco X "paga mais" na poupança.** O rendimento é o mesmo em todas as instituições, por lei.
+- **Tratar o 0,5% + TR como permanente.** A regra muda automaticamente se a Selic cair para 8,5% ao ano ou menos.
+- **Usar a TR de um mês antigo.** A TR é variável; confira o valor vigente no site do Banco Central.
+- **Comparar poupança com CDB pela taxa bruta.** A poupança é isenta de IR; a comparação correta é sempre com o rendimento líquido da alternativa.
+
+## Fontes oficiais
+
+- **Lei nº 12.703/2012** — regra de remuneração da poupança (0,5% + TR ou 70% da Selic + TR): [planalto.gov.br](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12703.htm).
+- **Banco Central do Brasil** — remuneração dos depósitos de poupança (valores mensais oficiais): [bcb.gov.br](https://www4.bcb.gov.br/pec/poupanca/poupanca.asp).
+- **Banco Central do Brasil** — histórico das metas da Selic definidas pelo Copom: [bcb.gov.br](https://www.bcb.gov.br/controleinflacao/historicotaxasjuros).
+- **Lei nº 8.981/1995, art. 68, III** — isenção de IR dos rendimentos de poupança para pessoa física: [planalto.gov.br](https://www.planalto.gov.br/ccivil_03/leis/l8981.htm).
+
+As taxas citadas (Selic de 14,25% a.a. e TR de ~0,17% a.m.) foram conferidas em 13/07/2026 e mudam ao longo do ano — os exemplos são estimativas, não promessa de rentabilidade. Este guia é informativo e não constitui recomendação de investimento; para simular o seu caso, use a [calculadora de poupança](/c/calculadora-poupanca/).

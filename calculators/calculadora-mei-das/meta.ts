@@ -2,9 +2,9 @@ import type { CalculatorMeta } from '@/lib/types';
 
 export const meta: CalculatorMeta = {
   slug: 'calculadora-mei-das',
-  title: 'Calculadora do DAS MEI 2026',
+  title: 'Calculadora do DAS MEI 2026: R$ 82,05 a R$ 87,05',
   description:
-    'Calcule o valor do DAS do MEI em 2026 por atividade: comércio (R$ 82,05), serviços (R$ 86,05) ou ambos (R$ 87,05), com a opção de MEI caminhoneiro.',
+    'O DAS do MEI em 2026 é de R$ 82,05 (comércio), R$ 86,05 (serviços) ou R$ 87,05 (ambos); caminhoneiro, de R$ 195,52 a R$ 200,52. Calcule o valor da sua guia.',
   primaryKw: 'calculadora das mei',
   relatedKws: [
     'valor do das mei 2026',
@@ -15,8 +15,8 @@ export const meta: CalculatorMeta = {
   category: 'tax',
   applicationCategory: 'FinanceApplication',
   publishedAt: '2026-06-06',
-  updatedAt: '2026-07-03',
-  reviewedAt: '2026-06-06',
+  updatedAt: '2026-07-13',
+  reviewedAt: '2026-07-13',
   faqs: [
     {
       q: 'Qual o valor do DAS do MEI em 2026?',

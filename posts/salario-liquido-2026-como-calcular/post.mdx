@@ -1,0 +1,127 @@
+## Resumo
+
+Calcular o salário líquido em 2026 exige três passos, sempre nesta ordem: primeiro o desconto do **INSS** pela tabela progressiva, depois a montagem da **base de cálculo do IRRF** e, por fim, a aplicação da tabela do imposto com o **redutor da Lei nº 15.270/2025** — a regra que zera o Imposto de Renda de quem recebe até R$ 5.000 por mês. As tabelas deste guia são as oficiais em vigor: a do INSS vem da Portaria Interministerial MPS/MF nº 13/2026 (divulgada pelo [INSS](https://www.gov.br/inss/pt-br/assuntos/com-reajuste-de-3-9-teto-do-inss-chega-a-r-8-475-55-em-2026)) e a do IRRF, da [Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026). Valores conferidos em 13/07/2026.
+
+Ao final, três holerites completos mostram a conta linha a linha. Se preferir o resultado direto, a [calculadora de salário líquido](/c/calculadora-salario-liquido/) aplica todas as regras deste guia automaticamente.
+
+## O caminho do bruto ao líquido
+
+**Salário líquido = salário bruto − INSS − IRRF − outros descontos**
+
+A ordem importa: o INSS é calculado primeiro, sobre o salário bruto; o IRRF vem depois, sobre uma base da qual o INSS já foi subtraído. Errar essa ordem é a causa mais comum de contas que não batem com o holerite. Os "outros descontos" (plano de saúde, vale-transporte, coparticipações, adiantamentos) variam de empresa para empresa e entram no final, sem alterar INSS nem IRRF na maioria dos casos.
+
+## Passo 1 — o desconto do INSS em 2026
+
+A contribuição do empregado ao INSS usa quatro faixas progressivas. Cada alíquota incide **apenas sobre a parcela do salário dentro da própria faixa**:
+
+| Faixa salarial (2026) | Alíquota |
+| --- | --- |
+| Até R$ 1.621,00 | 7,5% |
+| De R$ 1.621,01 a R$ 2.902,84 | 9% |
+| De R$ 2.902,85 a R$ 4.354,27 | 12% |
+| De R$ 4.354,28 a R$ 8.475,55 | 14% |
+
+O teto do salário de contribuição é **R$ 8.475,55**: quem ganha isso ou mais paga sempre o desconto máximo, de **R$ 988,09**. Abaixo do teto, a conta soma as parcelas de cada faixa. Para um salário de R$ 3.000,00, por exemplo: 7,5% sobre 1.621,00 (R$ 121,58) + 9% sobre 1.281,84 (R$ 115,37) + 12% sobre 97,16 (R$ 11,66) = **R$ 248,60**. A [calculadora de INSS](/c/calculadora-inss/) faz essa decomposição por faixa para qualquer salário.
+
+## Passo 2 — a base de cálculo do IRRF
+
+O imposto não incide sobre o bruto, e sim sobre uma base. Existem duas formas de montá-la, e a folha deve usar **a que resultar em menos imposto**:
+
+- **Base legal**: salário bruto − INSS − R$ 189,59 por dependente − pensão alimentícia judicial (se houver).
+- **Base simplificada**: salário bruto − R$ 607,20 (desconto simplificado mensal, que substitui todas as deduções).
+
+Em geral, a base simplificada ganha para quem não tem dependentes e tem salário menor; a base legal ganha para quem tem dependentes, pensão ou INSS alto. Não é preciso escolher às cegas: calcule as duas e fique com a menor.
+
+## Passo 3 — a tabela do IRRF e o redutor de 2026
+
+Sobre a base aplica-se a tabela progressiva mensal vigente:
+
+| Base de cálculo mensal | Alíquota | Parcela a deduzir |
+| --- | --- | --- |
+| Até R$ 2.428,80 | isento | — |
+| De R$ 2.428,81 a R$ 2.826,65 | 7,5% | R$ 182,16 |
+| De R$ 2.826,66 a R$ 3.751,05 | 15% | R$ 394,16 |
+| De R$ 3.751,06 a R$ 4.664,68 | 22,5% | R$ 675,49 |
+| Acima de R$ 4.664,68 | 27,5% | R$ 908,73 |
+
+Depois entra a novidade de 2026, criada pela Lei nº 15.270/2025 e detalhada nas [orientações da Receita Federal](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/receita-federal-orienta-fontes-pagadoras-e-contribuintes-a-calcular-a-reducao-do-imposto-de-renda-a-partir-de-1o-de-janeiro-de-2026):
+
+- **Rendimento mensal até R$ 5.000,00**: IRRF zero, independentemente da tabela.
+- **De R$ 5.000,01 a R$ 7.350,00**: aplica-se um redutor sobre o imposto apurado, calculado como **R$ 978,62 − (0,133145 × rendimento mensal)**. O redutor diminui gradualmente e chega a zero em R$ 7.350,00.
+- **Acima de R$ 7.350,00**: tabela normal, sem redutor.
+
+Importante: a isenção zera o **IRRF**, não o INSS — este continua sendo descontado de todos os salários. A [calculadora de IRRF](/c/calculadora-irrf/) mostra o imposto antes e depois do redutor para qualquer rendimento.
+
+## Exemplos completos
+
+### Exemplo 1 — R$ 4.000,00, sem dependentes
+
+- **INSS**: 121,58 + 115,37 + 131,66 = **R$ 368,60**
+- **IRRF**: bruto abaixo de R$ 5.000 → **R$ 0,00** pela regra de 2026
+- **Líquido**: 4.000,00 − 368,60 = **R$ 3.631,40**
+
+Antes da Lei 15.270/2025, um salário assim pagava imposto; em 2026, toda essa faixa ficou isenta na fonte.
+
+### Exemplo 2 — R$ 6.500,00, com 1 dependente
+
+- **INSS**: 121,58 + 115,37 + 174,17 + 300,40 = **R$ 711,51**
+- **Base legal**: 6.500,00 − 711,51 − 189,59 = R$ 5.598,90 → imposto de 5.598,90 × 27,5% − 908,73 = R$ 630,97. (A base simplificada daria R$ 711,79 de imposto, então vale a legal.)
+- **Redutor**: 978,62 − 0,133145 × 6.500 = **R$ 113,18**
+- **IRRF final**: 630,97 − 113,18 = **R$ 517,79**
+- **Líquido**: 6.500,00 − 711,51 − 517,79 = **R$ 5.270,70**
+
+### Exemplo 3 — R$ 9.000,00, com 2 dependentes
+
+- **INSS**: acima do teto → desconto máximo de **R$ 988,09**
+- **Base legal**: 9.000,00 − 988,09 − 379,18 = R$ 7.632,73 → imposto de 7.632,73 × 27,5% − 908,73 = **R$ 1.190,27**
+- **Redutor**: bruto acima de R$ 7.350 → não há
+- **Líquido**: 9.000,00 − 988,09 − 1.190,27 = **R$ 6.821,64**
+
+Nos três casos, descontos particulares (plano de saúde, vale-refeição com coparticipação, empréstimos consignados) sairiam do valor final, sem mudar INSS nem IRRF.
+
+## Simulações rápidas por faixa salarial
+
+Para quem quer só a ordem de grandeza, a tabela abaixo traz o líquido aproximado de salários comuns em 2026, **sem dependentes e sem descontos particulares** (plano de saúde, vale-transporte etc.):
+
+| Salário bruto | INSS | IRRF | Líquido aproximado |
+| --- | --- | --- | --- |
+| R$ 2.000,00 | R$ 155,69 | R$ 0,00 | R$ 1.844,31 |
+| R$ 3.000,00 | R$ 248,60 | R$ 0,00 | R$ 2.751,40 |
+| R$ 5.000,00 | R$ 501,51 | R$ 0,00 | R$ 4.498,49 |
+| R$ 8.000,00 | R$ 921,51 | R$ 1.037,85 | R$ 6.040,64 |
+
+Repare no salto entre R$ 5.000 e R$ 8.000: além de o INSS crescer, o IRRF passa de zero (isenção total) para mais de mil reais — em R$ 8.000, o bruto já está acima do limite do redutor (R$ 7.350) e paga a tabela cheia. É nessa região de renda que dependentes, pensão e previdência privada dedutível fazem mais diferença na base de cálculo.
+
+## 13º salário e férias: por que a conta muda
+
+Dois pagamentos anuais seguem regras próprias e costumam confundir:
+
+- **13º salário**: o INSS e o IRRF do 13º são apurados **separadamente** do salário do mês (tributação exclusiva na fonte). A primeira parcela, paga até 30 de novembro, sai sem descontos; todos os descontos se concentram na segunda parcela, de dezembro.
+- **Férias**: o empregado recebe o salário do período **mais 1/3 constitucional**, e sobre o total incidem INSS e IRRF na fonte. Como o pagamento sai antecipado (até 2 dias antes do início do descanso), o holerite do mês de férias fica diferente do habitual.
+
+Nos dois casos, a lógica das tabelas deste guia continua valendo — o que muda é a base sobre a qual elas são aplicadas.
+
+## O que mais pode mudar o seu líquido
+
+- **Vale-transporte**: desconto de até 6% do salário-base, quando o benefício é usado.
+- **Plano de saúde e odontológico**: a mensalidade ou coparticipação descontada em folha.
+- **Pensão alimentícia judicial**: além de reduzir o líquido, é dedutível da base do IRRF.
+- **Adiantamento quinzenal (vale)**: não muda o total do mês, mas divide o pagamento em duas datas.
+- **13º salário e férias**: têm tributação própria e não seguem exatamente a conta do salário mensal — o 13º, por exemplo, é tributado em separado.
+
+## Erros comuns
+
+- **Aplicar a alíquota cheia sobre o salário todo.** Tanto o INSS quanto o IRRF são progressivos: cada faixa incide só sobre a parcela dentro dela.
+- **Calcular o IRRF sobre o bruto.** A base correta desconta o INSS e as deduções (ou usa o desconto simplificado).
+- **Esquecer o redutor de 2026.** Entre R$ 5.000,01 e R$ 7.350,00 o imposto da tabela ainda existe, mas é reduzido pela fórmula da Lei 15.270/2025.
+- **Achar que a isenção até R$ 5.000 zera o INSS.** A isenção vale só para o Imposto de Renda; o INSS continua para todos.
+- **Comparar líquidos sem olhar os descontos particulares.** Duas pessoas com o mesmo bruto podem ter líquidos bem diferentes por causa de plano de saúde, pensão ou dependentes.
+
+## Fontes oficiais
+
+- **INSS / Previdência Social** — Portaria Interministerial MPS/MF nº 13/2026: teto de R$ 8.475,55 e faixas de contribuição de 2026: [gov.br/inss](https://www.gov.br/inss/pt-br/assuntos/com-reajuste-de-3-9-teto-do-inss-chega-a-r-8-475-55-em-2026).
+- **Receita Federal** — tabelas do Imposto de Renda de 2026: [gov.br/receitafederal](https://www.gov.br/receitafederal/pt-br/assuntos/meu-imposto-de-renda/tabelas/2026).
+- **Receita Federal** — orientação sobre o cálculo da redução do IR a partir de 01/01/2026 (fórmula do redutor): [gov.br/receitafederal](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/dezembro/receita-federal-orienta-fontes-pagadoras-e-contribuintes-a-calcular-a-reducao-do-imposto-de-renda-a-partir-de-1o-de-janeiro-de-2026).
+- **Ministério da Fazenda** — nova tabela do IRPF após a isenção até R$ 5.000: [gov.br/fazenda](https://www.gov.br/fazenda/pt-br/assuntos/noticias/2026/janeiro/receita-divulga-nova-tabela-do-irpf-com-as-mudancas-apos-isencao-para-quem-ganha-ate-r-5-mil).
+
+Os valores deste guia são estimativas baseadas nas tabelas oficiais de 2026; verbas variáveis, acordos coletivos e descontos específicos podem alterar o resultado. Para a conta do seu holerite, use a [calculadora de salário líquido](/c/calculadora-salario-liquido/) ou confirme com o departamento pessoal da sua empresa.
