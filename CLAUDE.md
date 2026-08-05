@@ -194,6 +194,7 @@ export function calculate(input: Input): Output {
 ## Quality bar（公開前チェックリスト）
 
 - [ ] `logic.test.ts` 全パス
+- [ ] **出典リンクが引用先の法令そのものを指しているか**: 共通基盤リポジトリで `node scripts/verify-sources.mjs <site-dir>` を実行し MISMATCH / DEAD が0件であること。ID でファイルを引くサイトは ID を1つ間違えても 200 で別の法令を返すため、目視では気づけない
 - [ ] Lighthouse モバイル: Performance / SEO / Accessibility / Best Practices すべて 90+
 - [ ] 主要 KW で Google.com.br 上位 10 件確認、独自価値が明確
 - [ ] スマホ実機で操作確認
