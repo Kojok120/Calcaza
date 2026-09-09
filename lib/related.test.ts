@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { calculators } from '@/calculators/registry';
 import type { CalculatorMeta } from './types';
 import { pickRelated } from './related';
 
@@ -30,35 +29,6 @@ function meta(slug: string, category: string, related?: string[]): CalculatorMet
 }
 
 const slugs = (list: CalculatorMeta[]) => list.map((m) => m.slug);
-
-/**
- * registry.ts を import すると各計算機の index.ts 経由で MDX まで読み込まれ、
- * vitest は MDX を解釈できない。calculator-contract.test.ts と同じく meta.ts
- * だけを glob で集める。
- *
- * ただし glob はディスク上の全ディレクトリを拾うので、registry に登録されて
- * いない（＝公開されていない）計算機の meta も混ざる。実行時に `pickRelated`
- * へ渡るのは registry の `calculators` だけなので、未登録の slug を related に
- * 書くと本番では黙って捨てられる。そこで registry.ts のソースから
- * `from './<dir>'` を読み、登録済みディレクトリの meta だけを対象にする。
- */
-declare global {
-  interface ImportMeta {
-    glob: (pattern: string, options?: { eager?: boolean }) => Record<string, unknown>;
-  }
-}
-const REGISTRY_PATH = resolve(__dirname, '../calculators/registry.ts');
-const registeredDirs = new Set(
-  [...readFileSync(REGISTRY_PATH, 'utf8').matchAll(/from '\.\/([^'/]+)'/g)].map((m) => m[1]),
-);
-const metaModules = import.meta.glob('../calculators/*/meta.ts', { eager: true }) as Record<
-  string,
-  { meta: CalculatorMeta }
->;
-const dirOf = (path: string) => path.split('/').at(-2)!;
-const calculators: CalculatorMeta[] = Object.entries(metaModules)
-  .filter(([path]) => registeredDirs.has(dirOf(path)))
-  .map(([, mod]) => mod.meta);
 
 describe('pickRelated', () => {
   it('明示した related を記載順で先頭に出し、自分自身と存在しない slug は捨てる', () => {
@@ -133,13 +103,19 @@ describe('pickRelated', () => {
   });
 });
 
+/**
+ * 実行時に `pickRelated` へ渡るのは registry.ts が export する `calculators`
+ * そのものなので、検査もそれを使う（ディスク上の meta.ts を glob で集めると、
+ * 登録されていない計算機まで「実在する」と誤判定する）。registry.ts は各計算機の
+ * index.ts 経由で content.mdx まで import するため、vitest.config.ts の
+ * `mdxStub` プラグインが MDX を空コンポーネントに差し替えている。
+ */
 describe('registry の related', () => {
   const bySlug = new Set(calculators.map((m) => m.slug));
 
-  it('registry.ts から登録済みディレクトリを読めている', () => {
-    // 正規表現の空振りで対象が 0 件になると、以下の検査が全て素通りする
-    expect(registeredDirs.size).toBeGreaterThan(0);
-    expect(calculators.length).toBe(registeredDirs.size);
+  it('registry が空でない', () => {
+    // MDX スタブや alias の不備で import が空振りすると、以下の検査が全て素通りする
+    expect(calculators.length).toBeGreaterThan(0);
   });
 
   it('related の slug は全て registry 登録済みの計算機を指し、自分自身と重複を含まない', () => {
