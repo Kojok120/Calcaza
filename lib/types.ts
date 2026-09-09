@@ -31,4 +31,10 @@ export type CalculatorMeta = {
   reviewedAt?: string; // ISO date
   faqs: Faq[];
   affiliates: string[];
+  /**
+   * 文脈が近い計算機の slug（同じ国・同じ制度など）。関連計算機枠の先頭に出る。
+   * 相互参照になるので、新しいページは自分から既存の強いページを挙げるだけで
+   * よい（lib/related.ts）。
+   */
+  related?: string[];
 };
