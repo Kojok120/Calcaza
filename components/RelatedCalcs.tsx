@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import type { CalculatorMeta } from '@/lib/types';
+import { pickRelated } from '@/lib/related';
 
 type Props = {
   current: CalculatorMeta;
@@ -8,11 +9,8 @@ type Props = {
   limit?: number;
 };
 
-export function RelatedCalcs({ current, all, limit = 4 }: Props) {
-  const others = all.filter((m) => m.slug !== current.slug);
-  const sameCategory = others.filter((m) => m.category === current.category);
-  const otherCategory = others.filter((m) => m.category !== current.category);
-  const picked = [...sameCategory, ...otherCategory].slice(0, limit);
+export function RelatedCalcs({ current, all, limit = 6 }: Props) {
+  const picked = pickRelated(current, all, limit);
 
   if (picked.length === 0) return null;
 
