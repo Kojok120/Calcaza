@@ -55,12 +55,12 @@ describe('pickRelated', () => {
   it('同カテゴリの中では slug の語彙が近い順、同点なら registry 順', () => {
     const all = [
       meta('gosi-net-salary-ksa', 'labor'),
-      meta('end-of-service-gratuity-kuwait', 'labor'),
-      meta('overtime-pay-ksa', 'labor'),
       meta('overtime-pay-kuwait', 'labor'),
+      meta('overtime-pay-ksa', 'labor'),
+      meta('end-of-service-gratuity-kuwait', 'labor'),
     ];
-    // overtime+pay を共有する ksa 版 > kuwait を共有する退職金 > 何も共有しない GOSI
-    expect(slugs(pickRelated(all[3], all))).toEqual([
+    // overtime+pay を共有する ksa 版（registry で次でもある）> kuwait を共有する退職金 > 何も共有しない GOSI
+    expect(slugs(pickRelated(all[1], all))).toEqual([
       'overtime-pay-ksa',
       'end-of-service-gratuity-kuwait',
       'gosi-net-salary-ksa',
@@ -80,15 +80,47 @@ describe('pickRelated', () => {
   it('同カテゴリを他カテゴリより先に出し、他カテゴリ内でも語彙の近さで並べる', () => {
     const all = [
       meta('dewa-bill-uae', 'utility'),
-      meta('golden-visa-cost-uae', 'visa'),
       meta('sec-electricity-bill-ksa', 'utility'),
+      meta('golden-visa-cost-uae', 'visa'),
       meta('salik-toll-monthly-uae', 'car'),
     ];
     expect(slugs(pickRelated(all[0], all))).toEqual([
-      'sec-electricity-bill-ksa', // 同カテゴリ（共有語なし）
-      'golden-visa-cost-uae', // 他カテゴリ、uae を共有、registry 順で先
+      'sec-electricity-bill-ksa', // 同カテゴリ（共有語なし。registry で次でもある）
+      'golden-visa-cost-uae', // 他カテゴリ、uae を共有、巡回順で先
       'salik-toll-monthly-uae',
     ]);
+  });
+
+  it('前置詞や年号の共有は関連とみなさない', () => {
+    const all = [
+      meta('calculadora-imposto-de-renda', 'tax'),
+      meta('calculadora-inss', 'tax'),
+      meta('calculadora-hsa-aporte-maximo-2026', 'health'),
+      meta('calculadora-credito-hijos-2026', 'tax'),
+      meta('calculadora-margem-de-lucro', 'finance'),
+    ];
+    // `de` だけを共有する margem-de-lucro は他カテゴリの先頭に来ない（巡回順のまま hsa が先）
+    expect(slugs(pickRelated(all[0], all))).toEqual([
+      'calculadora-inss', // registry で次
+      'calculadora-credito-hijos-2026', // 同カテゴリ
+      'calculadora-hsa-aporte-maximo-2026', // 他カテゴリ、巡回順
+      'calculadora-margem-de-lucro',
+    ]);
+    // `2026` だけを共有する hsa は他カテゴリの中で前に出ない（巡回順で最後）
+    expect(slugs(pickRelated(all[3], all)).at(-1)).toBe('calculadora-hsa-aporte-maximo-2026');
+  });
+
+  it('registry で次のページは必ず 1 本入る（カテゴリが違っても）', () => {
+    const all = [meta('a', 'x'), meta('b', 'y'), meta('c', 'x')];
+    expect(slugs(pickRelated(all[0], all, 1))).toEqual(['b']);
+    // 末尾のページの「次」は先頭
+    expect(slugs(pickRelated(all[2], all, 1))).toEqual(['a']);
+  });
+
+  it('同点の候補は registry で自分の次のページから巡回順に埋める', () => {
+    const all = [meta('a', 'x'), meta('b', 'x'), meta('c', 'x'), meta('d', 'x')];
+    expect(slugs(pickRelated(all[2], all, 2))).toEqual(['d', 'a']);
+    expect(slugs(pickRelated(all[3], all, 2))).toEqual(['a', 'b']);
   });
 
   it('limit で切り、重複は出さない', () => {
@@ -132,5 +164,14 @@ describe('registry の related', () => {
     for (const m of calculators) {
       expect(pickRelated(m, calculators).length, m.slug).toBeGreaterThan(0);
     }
+  });
+
+  it('どの計算機も、他の計算機の関連枠に少なくとも 1 回は出る（入ってくるリンクが 0 本のページを作らない）', () => {
+    const incoming = new Map(calculators.map((m) => [m.slug, 0]));
+    for (const m of calculators) {
+      for (const picked of pickRelated(m, calculators)) incoming.set(picked.slug, (incoming.get(picked.slug) ?? 0) + 1);
+    }
+    const orphans = [...incoming].filter(([, n]) => n === 0).map(([slug]) => slug);
+    expect(orphans).toEqual([]);
   });
 });
