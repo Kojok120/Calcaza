@@ -15,7 +15,8 @@ import type { CalculatorMeta } from './types';
  *     自分から既存の強いページを挙げるだけで、強いページの枠にも載る
  *  3. registry で `current` の次に並ぶ計算機（必ず 1 本）。どのページも直前の
  *     ページの枠に載るので、入ってくるリンクが 0 本のページが構造的に生まれない
- *     （語彙類似と巡回順だけでは、カテゴリに 1 本しか無いページが孤立した）
+ *     （語彙類似と巡回順だけでは、カテゴリに 1 本しか無いページが孤立した）。
+ *     明示・相互参照だけで枠が埋まる場合も、最後の 1 枠はこの後継に譲る
  *  4. 同カテゴリで slug の語彙が近いもの。共有する語の希少さ（IDF）で重み付け
  *     するので、全計算機に共通する語（taiwan / calculator / ksa など）は自然に
  *     効かなくなり、国名・州名・制度名のような固有の語だけが効く
@@ -50,9 +51,10 @@ export function pickRelated(
     picked.push(m);
   };
 
+  const successor = n > 1 ? all[(currentIndex + 1) % n] : undefined;
   for (const slug of current.related ?? []) push(bySlug.get(slug));
   for (const m of all) if (m.related?.includes(current.slug)) push(m);
-  if (n > 1) push(all[(currentIndex + 1) % n]);
+  push(successor);
 
   type Ranked = { m: CalculatorMeta; distance: number; score: number };
   const rest: Ranked[] = all
@@ -62,7 +64,13 @@ export function pickRelated(
   for (const { m } of rest.filter(({ m }) => m.category === current.category).sort(byScoreThenCyclic)) push(m);
   for (const { m } of rest.filter(({ m }) => m.category !== current.category).sort(byScoreThenCyclic)) push(m);
 
-  return picked.slice(0, limit);
+  const result = picked.slice(0, limit);
+  // 明示・相互参照が limit 本以上あると後継が切り落とされ、保証が崩れる。
+  // その場合は最後の 1 枠を後継に譲る（limit が 1 なら後継だけになる）。
+  if (successor && limit > 0 && !result.some((m) => m.slug === successor.slug)) {
+    result[Math.min(limit, result.length) - 1] = successor;
+  }
+  return result;
 }
 
 /**

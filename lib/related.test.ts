@@ -117,6 +117,15 @@ describe('pickRelated', () => {
     expect(slugs(pickRelated(all[2], all, 1))).toEqual(['a']);
   });
 
+  it('明示・相互参照で枠が埋まっていても、最後の 1 枠は registry で次のページに譲る', () => {
+    const all = [meta('a', 'x', ['c', 'd', 'e']), meta('b', 'y'), meta('c', 'x'), meta('d', 'x'), meta('e', 'x')];
+    // 明示 3 本で limit 3 が埋まるが、後継 b が最後の枠に入る
+    expect(slugs(pickRelated(all[0], all, 3))).toEqual(['c', 'd', 'b']);
+    // 後継が既に明示に含まれていれば差し替えない
+    const all2 = [meta('a', 'x', ['b', 'c']), meta('b', 'y'), meta('c', 'x')];
+    expect(slugs(pickRelated(all2[0], all2, 2))).toEqual(['b', 'c']);
+  });
+
   it('同点の候補は registry で自分の次のページから巡回順に埋める', () => {
     const all = [meta('a', 'x'), meta('b', 'x'), meta('c', 'x'), meta('d', 'x')];
     expect(slugs(pickRelated(all[2], all, 2))).toEqual(['d', 'a']);
