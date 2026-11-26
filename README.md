@@ -8,7 +8,7 @@ Brazilian Portuguese (pt-BR) programmatic-SEO calculator site for Brazil. Public
 - Stack: Next.js 15 (App Router) · TypeScript · Tailwind CSS · MDX · Vitest · Playwright
 - Hosting target: Cloudflare Pages (static export)
 
-For agent / contributor rules see `CLAUDE.md`. The structured runtime context every PSEO agent loads is `docs/site-context.md`.
+For agent / contributor rules see `AGENTS.md`. The structured runtime context every PSEO agent loads is `docs/site-context.md`.
 
 **Geographic scope**: Brazil federal (Receita Federal / INSS / Previdência / Caixa-FGTS / Ministério do Trabalho / TST / Banco Central / IBGE) + state SEFAZ where relevant (ICMS / IPVA). Portugal (Autoridade Tributária) and other Lusophone countries are explicitly **out of scope** — do not import pt-PT or Portuguese-tax figures into Brazilian calculators.
 

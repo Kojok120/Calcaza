@@ -28,7 +28,7 @@
 4. **独自ドメインを Pages に割り当て**（[§ 3-3](#3-3-独自ドメインの割り当て)）
 5. **Cloudflare Web Analytics** 有効化、トークン取得（[§ 4](#4-cloudflare-web-analytics)）
 6. **プライバシーポリシー / 運営者情報 / 免責事項 / お問い合わせ** ページを実コンテンツで整備（[§ 8](#8-公開前の法的ページ整備)）
-7. **計算機 5 本 + 各 500 語以上の解説** を公開（CLAUDE.md M1 ゴール）
+7. **計算機 5 本 + 各 500 語以上の解説** を公開（AGENTS.md M1 ゴール）
 8. **Google Search Console** にドメイン追加 → 所有権確認 → サイトマップ提出（[§ 5](#5-google-search-console)）
 9. **Google AdSense** 申請（[§ 6](#6-google-adsense)）
 10. AdSense 承認後 → Publisher ID を Cloudflare Pages の環境変数に登録 → `public/ads.txt` を配信
@@ -283,7 +283,7 @@ NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN = <32桁のhex文字列>
 | 必要コード | サイト全体の AdSense コードのみ | 共通コード + `<ins class="adsbygoogle">` を本文に配置 |
 | 制御 | Google が配置・形式・本数を最適化 | `data-ad-slot` ごとに位置・サイズを手動制御 |
 
-**このサイトの方針**: CLAUDE.md の「計算結果上下に 1-2 スロット」「過剰配置 NG」と整合させるため、**手動の広告ユニット**を使用。`lib/ads.ts` の `AD_SLOTS` と `components/ads/AdSlot.tsx` がこの方針で実装済み。
+**このサイトの方針**: AGENTS.md の「計算結果上下に 1-2 スロット」「過剰配置 NG」と整合させるため、**手動の広告ユニット**を使用。`lib/ads.ts` の `AD_SLOTS` と `components/ads/AdSlot.tsx` がこの方針で実装済み。
 
 承認後にやること:
 1. AdSense → **広告** → **広告ユニットごと** で **ディスプレイ広告** を 2 つ作成（in-feed と in-article）
@@ -308,7 +308,7 @@ NEXT_PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN = <32桁のhex文字列>
 3. **バリューコマース** は記事 20 本超えてから（Yahoo!ショッピング・大手 EC 案件が強い）
 4. **Amazon アソシエイト本家**は安定運用後に申請
 
-CLAUDE.md の `affiliates` 配列（`pet-insurance` / `pet-supplies` 等のカテゴリ）に対応する具体案件は、もしも・A8 のサーチで「ペット保険」「ペット用品」を検索して提携。
+AGENTS.md の `affiliates` 配列（`pet-insurance` / `pet-supplies` 等のカテゴリ）に対応する具体案件は、もしも・A8 のサーチで「ペット保険」「ペット用品」を検索して提携。
 
 ---
 
@@ -361,7 +361,7 @@ CCPA の閾値（年商 USD 25M / 100,000 California 居住者の個人情報処
 `components/DisclaimerNote.tsx` で計算機ページ末尾に表示している内容に加え、`/disclaimer/` ページに明記済み:
 
 - 計算結果は **estimación general** であり、最終判断はユーザーの自己責任
-- Tax は **CPA / Enrolled Agent / IRS**、住宅ローンは **licensed mortgage broker**、健康は医師、法律は弁護士へ誘導（CLAUDE.md の YMYL 方針と整合）
+- Tax は **CPA / Enrolled Agent / IRS**、住宅ローンは **licensed mortgage broker**、健康は医師、法律は弁護士へ誘導（AGENTS.md の YMYL 方針と整合）
 - **Immigration legal advice は絶対書かない**（弁護士領域）
 - リンク先サイトの内容について責任を負わない旨
 
@@ -405,7 +405,7 @@ CCPA の閾値（年商 USD 25M / 100,000 California 居住者の個人情報処
 | **PageSpeed Insights** | <https://pagespeed.web.dev/>（Lighthouse + 実フィールドデータ） |
 | **WebPageTest** | <https://www.webpagetest.org/> |
 
-CLAUDE.md の品質バー: Lighthouse すべて 90+ をローンチ前に確認。
+AGENTS.md の品質バー: Lighthouse すべて 90+ をローンチ前に確認。
 
 ---
 
